@@ -1,0 +1,12 @@
+[package]
+name = "libxdp"
+version = "0.0.1"
+authors = ["Hengqi Chen <chenhengqi@outlook.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[build-dependencies]
+bindgen = "0.58.1"
