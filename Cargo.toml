@@ -1,10 +1,17 @@
 [package]
 name = "libxdp"
+description= "Rust FFI bindings to libxdp generated using bindgen."
+repository = "https://github.com/chenhengqi/libxdp-rs"
+homepage = "https://github.com/chenhengqi/libxdp-rs"
+readme = "README.md"
 version = "0.0.1"
 authors = ["Hengqi Chen <chenhengqi@outlook.com>"]
 edition = "2018"
+license = "BSD-2-Clause"
+keywords = ["xdp", "bpf", "libxdp", "libbpf"]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[badges]
+maintenance = { status = "actively-developed" }
 
 [dependencies]
 
