@@ -415,6 +415,591 @@ pub const XDP_METADATA_SECTION: &'static [u8; 13usize] = b"xdp_metadata\0";
 pub const XDP_DISPATCHER_VERSION: u32 = 1;
 pub const XDP_DISPATCHER_RETVAL: u32 = 31;
 pub const MAX_DISPATCHER_ACTIONS: u32 = 10;
+pub const ETH_ALEN: u32 = 6;
+pub const ETH_TLEN: u32 = 2;
+pub const ETH_HLEN: u32 = 14;
+pub const ETH_ZLEN: u32 = 60;
+pub const ETH_DATA_LEN: u32 = 1500;
+pub const ETH_FRAME_LEN: u32 = 1514;
+pub const ETH_FCS_LEN: u32 = 4;
+pub const ETH_MIN_MTU: u32 = 68;
+pub const ETH_MAX_MTU: u32 = 65535;
+pub const ETH_P_LOOP: u32 = 96;
+pub const ETH_P_PUP: u32 = 512;
+pub const ETH_P_PUPAT: u32 = 513;
+pub const ETH_P_TSN: u32 = 8944;
+pub const ETH_P_ERSPAN2: u32 = 8939;
+pub const ETH_P_IP: u32 = 2048;
+pub const ETH_P_X25: u32 = 2053;
+pub const ETH_P_ARP: u32 = 2054;
+pub const ETH_P_BPQ: u32 = 2303;
+pub const ETH_P_IEEEPUP: u32 = 2560;
+pub const ETH_P_IEEEPUPAT: u32 = 2561;
+pub const ETH_P_BATMAN: u32 = 17157;
+pub const ETH_P_DEC: u32 = 24576;
+pub const ETH_P_DNA_DL: u32 = 24577;
+pub const ETH_P_DNA_RC: u32 = 24578;
+pub const ETH_P_DNA_RT: u32 = 24579;
+pub const ETH_P_LAT: u32 = 24580;
+pub const ETH_P_DIAG: u32 = 24581;
+pub const ETH_P_CUST: u32 = 24582;
+pub const ETH_P_SCA: u32 = 24583;
+pub const ETH_P_TEB: u32 = 25944;
+pub const ETH_P_RARP: u32 = 32821;
+pub const ETH_P_ATALK: u32 = 32923;
+pub const ETH_P_AARP: u32 = 33011;
+pub const ETH_P_8021Q: u32 = 33024;
+pub const ETH_P_ERSPAN: u32 = 35006;
+pub const ETH_P_IPX: u32 = 33079;
+pub const ETH_P_IPV6: u32 = 34525;
+pub const ETH_P_PAUSE: u32 = 34824;
+pub const ETH_P_SLOW: u32 = 34825;
+pub const ETH_P_WCCP: u32 = 34878;
+pub const ETH_P_MPLS_UC: u32 = 34887;
+pub const ETH_P_MPLS_MC: u32 = 34888;
+pub const ETH_P_ATMMPOA: u32 = 34892;
+pub const ETH_P_PPP_DISC: u32 = 34915;
+pub const ETH_P_PPP_SES: u32 = 34916;
+pub const ETH_P_LINK_CTL: u32 = 34924;
+pub const ETH_P_ATMFATE: u32 = 34948;
+pub const ETH_P_PAE: u32 = 34958;
+pub const ETH_P_AOE: u32 = 34978;
+pub const ETH_P_8021AD: u32 = 34984;
+pub const ETH_P_802_EX1: u32 = 34997;
+pub const ETH_P_PREAUTH: u32 = 35015;
+pub const ETH_P_TIPC: u32 = 35018;
+pub const ETH_P_LLDP: u32 = 35020;
+pub const ETH_P_MACSEC: u32 = 35045;
+pub const ETH_P_8021AH: u32 = 35047;
+pub const ETH_P_MVRP: u32 = 35061;
+pub const ETH_P_1588: u32 = 35063;
+pub const ETH_P_NCSI: u32 = 35064;
+pub const ETH_P_PRP: u32 = 35067;
+pub const ETH_P_FCOE: u32 = 35078;
+pub const ETH_P_IBOE: u32 = 35093;
+pub const ETH_P_TDLS: u32 = 35085;
+pub const ETH_P_FIP: u32 = 35092;
+pub const ETH_P_80221: u32 = 35095;
+pub const ETH_P_HSR: u32 = 35119;
+pub const ETH_P_NSH: u32 = 35151;
+pub const ETH_P_LOOPBACK: u32 = 36864;
+pub const ETH_P_QINQ1: u32 = 37120;
+pub const ETH_P_QINQ2: u32 = 37376;
+pub const ETH_P_QINQ3: u32 = 37632;
+pub const ETH_P_EDSA: u32 = 56026;
+pub const ETH_P_DSA_8021Q: u32 = 56027;
+pub const ETH_P_IFE: u32 = 60734;
+pub const ETH_P_AF_IUCV: u32 = 64507;
+pub const ETH_P_802_3_MIN: u32 = 1536;
+pub const ETH_P_802_3: u32 = 1;
+pub const ETH_P_AX25: u32 = 2;
+pub const ETH_P_ALL: u32 = 3;
+pub const ETH_P_802_2: u32 = 4;
+pub const ETH_P_SNAP: u32 = 5;
+pub const ETH_P_DDCMP: u32 = 6;
+pub const ETH_P_WAN_PPP: u32 = 7;
+pub const ETH_P_PPP_MP: u32 = 8;
+pub const ETH_P_LOCALTALK: u32 = 9;
+pub const ETH_P_CAN: u32 = 12;
+pub const ETH_P_CANFD: u32 = 13;
+pub const ETH_P_PPPTALK: u32 = 16;
+pub const ETH_P_TR_802_2: u32 = 17;
+pub const ETH_P_MOBITEX: u32 = 21;
+pub const ETH_P_CONTROL: u32 = 22;
+pub const ETH_P_IRDA: u32 = 23;
+pub const ETH_P_ECONET: u32 = 24;
+pub const ETH_P_HDLC: u32 = 25;
+pub const ETH_P_ARCNET: u32 = 26;
+pub const ETH_P_DSA: u32 = 27;
+pub const ETH_P_TRAILER: u32 = 28;
+pub const ETH_P_PHONET: u32 = 245;
+pub const ETH_P_IEEE802154: u32 = 246;
+pub const ETH_P_CAIF: u32 = 247;
+pub const ETH_P_XDSA: u32 = 248;
+pub const ETH_P_MAP: u32 = 249;
+pub const __UAPI_DEF_ETHHDR: u32 = 1;
+pub const PACKET_HOST: u32 = 0;
+pub const PACKET_BROADCAST: u32 = 1;
+pub const PACKET_MULTICAST: u32 = 2;
+pub const PACKET_OTHERHOST: u32 = 3;
+pub const PACKET_OUTGOING: u32 = 4;
+pub const PACKET_LOOPBACK: u32 = 5;
+pub const PACKET_USER: u32 = 6;
+pub const PACKET_KERNEL: u32 = 7;
+pub const PACKET_FASTROUTE: u32 = 6;
+pub const PACKET_ADD_MEMBERSHIP: u32 = 1;
+pub const PACKET_DROP_MEMBERSHIP: u32 = 2;
+pub const PACKET_RECV_OUTPUT: u32 = 3;
+pub const PACKET_RX_RING: u32 = 5;
+pub const PACKET_STATISTICS: u32 = 6;
+pub const PACKET_COPY_THRESH: u32 = 7;
+pub const PACKET_AUXDATA: u32 = 8;
+pub const PACKET_ORIGDEV: u32 = 9;
+pub const PACKET_VERSION: u32 = 10;
+pub const PACKET_HDRLEN: u32 = 11;
+pub const PACKET_RESERVE: u32 = 12;
+pub const PACKET_TX_RING: u32 = 13;
+pub const PACKET_LOSS: u32 = 14;
+pub const PACKET_VNET_HDR: u32 = 15;
+pub const PACKET_TX_TIMESTAMP: u32 = 16;
+pub const PACKET_TIMESTAMP: u32 = 17;
+pub const PACKET_FANOUT: u32 = 18;
+pub const PACKET_TX_HAS_OFF: u32 = 19;
+pub const PACKET_QDISC_BYPASS: u32 = 20;
+pub const PACKET_ROLLOVER_STATS: u32 = 21;
+pub const PACKET_FANOUT_DATA: u32 = 22;
+pub const PACKET_IGNORE_OUTGOING: u32 = 23;
+pub const PACKET_FANOUT_HASH: u32 = 0;
+pub const PACKET_FANOUT_LB: u32 = 1;
+pub const PACKET_FANOUT_CPU: u32 = 2;
+pub const PACKET_FANOUT_ROLLOVER: u32 = 3;
+pub const PACKET_FANOUT_RND: u32 = 4;
+pub const PACKET_FANOUT_QM: u32 = 5;
+pub const PACKET_FANOUT_CBPF: u32 = 6;
+pub const PACKET_FANOUT_EBPF: u32 = 7;
+pub const PACKET_FANOUT_FLAG_ROLLOVER: u32 = 4096;
+pub const PACKET_FANOUT_FLAG_UNIQUEID: u32 = 8192;
+pub const PACKET_FANOUT_FLAG_DEFRAG: u32 = 32768;
+pub const TP_STATUS_KERNEL: u32 = 0;
+pub const TP_STATUS_USER: u32 = 1;
+pub const TP_STATUS_COPY: u32 = 2;
+pub const TP_STATUS_LOSING: u32 = 4;
+pub const TP_STATUS_CSUMNOTREADY: u32 = 8;
+pub const TP_STATUS_VLAN_VALID: u32 = 16;
+pub const TP_STATUS_BLK_TMO: u32 = 32;
+pub const TP_STATUS_VLAN_TPID_VALID: u32 = 64;
+pub const TP_STATUS_CSUM_VALID: u32 = 128;
+pub const TP_STATUS_AVAILABLE: u32 = 0;
+pub const TP_STATUS_SEND_REQUEST: u32 = 1;
+pub const TP_STATUS_SENDING: u32 = 2;
+pub const TP_STATUS_WRONG_FORMAT: u32 = 4;
+pub const TP_STATUS_TS_SOFTWARE: u32 = 536870912;
+pub const TP_STATUS_TS_SYS_HARDWARE: u32 = 1073741824;
+pub const TP_STATUS_TS_RAW_HARDWARE: u32 = 2147483648;
+pub const TP_FT_REQ_FILL_RXHASH: u32 = 1;
+pub const TPACKET_ALIGNMENT: u32 = 16;
+pub const PACKET_MR_MULTICAST: u32 = 0;
+pub const PACKET_MR_PROMISC: u32 = 1;
+pub const PACKET_MR_ALLMULTI: u32 = 2;
+pub const PACKET_MR_UNICAST: u32 = 3;
+pub const IPTOS_TOS_MASK: u32 = 30;
+pub const IPTOS_LOWDELAY: u32 = 16;
+pub const IPTOS_THROUGHPUT: u32 = 8;
+pub const IPTOS_RELIABILITY: u32 = 4;
+pub const IPTOS_MINCOST: u32 = 2;
+pub const IPTOS_PREC_MASK: u32 = 224;
+pub const IPTOS_PREC_NETCONTROL: u32 = 224;
+pub const IPTOS_PREC_INTERNETCONTROL: u32 = 192;
+pub const IPTOS_PREC_CRITIC_ECP: u32 = 160;
+pub const IPTOS_PREC_FLASHOVERRIDE: u32 = 128;
+pub const IPTOS_PREC_FLASH: u32 = 96;
+pub const IPTOS_PREC_IMMEDIATE: u32 = 64;
+pub const IPTOS_PREC_PRIORITY: u32 = 32;
+pub const IPTOS_PREC_ROUTINE: u32 = 0;
+pub const IPOPT_COPY: u32 = 128;
+pub const IPOPT_CLASS_MASK: u32 = 96;
+pub const IPOPT_NUMBER_MASK: u32 = 31;
+pub const IPOPT_CONTROL: u32 = 0;
+pub const IPOPT_RESERVED1: u32 = 32;
+pub const IPOPT_MEASUREMENT: u32 = 64;
+pub const IPOPT_RESERVED2: u32 = 96;
+pub const IPOPT_END: u32 = 0;
+pub const IPOPT_NOOP: u32 = 1;
+pub const IPOPT_SEC: u32 = 130;
+pub const IPOPT_LSRR: u32 = 131;
+pub const IPOPT_TIMESTAMP: u32 = 68;
+pub const IPOPT_CIPSO: u32 = 134;
+pub const IPOPT_RR: u32 = 7;
+pub const IPOPT_SID: u32 = 136;
+pub const IPOPT_SSRR: u32 = 137;
+pub const IPOPT_RA: u32 = 148;
+pub const IPVERSION: u32 = 4;
+pub const MAXTTL: u32 = 255;
+pub const IPDEFTTL: u32 = 64;
+pub const IPOPT_OPTVAL: u32 = 0;
+pub const IPOPT_OLEN: u32 = 1;
+pub const IPOPT_OFFSET: u32 = 2;
+pub const IPOPT_MINOFF: u32 = 4;
+pub const MAX_IPOPTLEN: u32 = 40;
+pub const IPOPT_NOP: u32 = 1;
+pub const IPOPT_EOL: u32 = 0;
+pub const IPOPT_TS: u32 = 68;
+pub const IPOPT_TS_TSONLY: u32 = 0;
+pub const IPOPT_TS_TSANDADDR: u32 = 1;
+pub const IPOPT_TS_PRESPEC: u32 = 3;
+pub const IPV4_BEET_PHMAXLEN: u32 = 8;
+pub const __UAPI_DEF_IF_IFCONF: u32 = 1;
+pub const __UAPI_DEF_IF_IFMAP: u32 = 1;
+pub const __UAPI_DEF_IF_IFNAMSIZ: u32 = 1;
+pub const __UAPI_DEF_IF_IFREQ: u32 = 1;
+pub const __UAPI_DEF_IF_NET_DEVICE_FLAGS: u32 = 1;
+pub const __UAPI_DEF_IF_NET_DEVICE_FLAGS_LOWER_UP_DORMANT_ECHO: u32 = 1;
+pub const __UAPI_DEF_IN_ADDR: u32 = 1;
+pub const __UAPI_DEF_IN_IPPROTO: u32 = 1;
+pub const __UAPI_DEF_IN_PKTINFO: u32 = 1;
+pub const __UAPI_DEF_IP_MREQ: u32 = 1;
+pub const __UAPI_DEF_SOCKADDR_IN: u32 = 1;
+pub const __UAPI_DEF_IN_CLASS: u32 = 1;
+pub const __UAPI_DEF_IN6_ADDR: u32 = 1;
+pub const __UAPI_DEF_IN6_ADDR_ALT: u32 = 1;
+pub const __UAPI_DEF_SOCKADDR_IN6: u32 = 1;
+pub const __UAPI_DEF_IPV6_MREQ: u32 = 1;
+pub const __UAPI_DEF_IPPROTO_V6: u32 = 1;
+pub const __UAPI_DEF_IPV6_OPTIONS: u32 = 1;
+pub const __UAPI_DEF_IN6_PKTINFO: u32 = 1;
+pub const __UAPI_DEF_IP6_MTUINFO: u32 = 1;
+pub const __UAPI_DEF_SOCKADDR_IPX: u32 = 1;
+pub const __UAPI_DEF_IPX_ROUTE_DEFINITION: u32 = 1;
+pub const __UAPI_DEF_IPX_INTERFACE_DEFINITION: u32 = 1;
+pub const __UAPI_DEF_IPX_CONFIG_DATA: u32 = 1;
+pub const __UAPI_DEF_IPX_ROUTE_DEF: u32 = 1;
+pub const __UAPI_DEF_XATTR: u32 = 1;
+pub const IPV6_FL_A_GET: u32 = 0;
+pub const IPV6_FL_A_PUT: u32 = 1;
+pub const IPV6_FL_A_RENEW: u32 = 2;
+pub const IPV6_FL_F_CREATE: u32 = 1;
+pub const IPV6_FL_F_EXCL: u32 = 2;
+pub const IPV6_FL_F_REFLECT: u32 = 4;
+pub const IPV6_FL_F_REMOTE: u32 = 8;
+pub const IPV6_FL_S_NONE: u32 = 0;
+pub const IPV6_FL_S_EXCL: u32 = 1;
+pub const IPV6_FL_S_PROCESS: u32 = 2;
+pub const IPV6_FL_S_USER: u32 = 3;
+pub const IPV6_FL_S_ANY: u32 = 255;
+pub const IPV6_FLOWINFO_FLOWLABEL: u32 = 1048575;
+pub const IPV6_FLOWINFO_PRIORITY: u32 = 267386880;
+pub const IPV6_PRIORITY_UNCHARACTERIZED: u32 = 0;
+pub const IPV6_PRIORITY_FILLER: u32 = 256;
+pub const IPV6_PRIORITY_UNATTENDED: u32 = 512;
+pub const IPV6_PRIORITY_RESERVED1: u32 = 768;
+pub const IPV6_PRIORITY_BULK: u32 = 1024;
+pub const IPV6_PRIORITY_RESERVED2: u32 = 1280;
+pub const IPV6_PRIORITY_INTERACTIVE: u32 = 1536;
+pub const IPV6_PRIORITY_CONTROL: u32 = 1792;
+pub const IPV6_PRIORITY_8: u32 = 2048;
+pub const IPV6_PRIORITY_9: u32 = 2304;
+pub const IPV6_PRIORITY_10: u32 = 2560;
+pub const IPV6_PRIORITY_11: u32 = 2816;
+pub const IPV6_PRIORITY_12: u32 = 3072;
+pub const IPV6_PRIORITY_13: u32 = 3328;
+pub const IPV6_PRIORITY_14: u32 = 3584;
+pub const IPV6_PRIORITY_15: u32 = 3840;
+pub const IPPROTO_HOPOPTS: u32 = 0;
+pub const IPPROTO_ROUTING: u32 = 43;
+pub const IPPROTO_FRAGMENT: u32 = 44;
+pub const IPPROTO_ICMPV6: u32 = 58;
+pub const IPPROTO_NONE: u32 = 59;
+pub const IPPROTO_DSTOPTS: u32 = 60;
+pub const IPPROTO_MH: u32 = 135;
+pub const IPV6_TLV_PAD1: u32 = 0;
+pub const IPV6_TLV_PADN: u32 = 1;
+pub const IPV6_TLV_ROUTERALERT: u32 = 5;
+pub const IPV6_TLV_CALIPSO: u32 = 7;
+pub const IPV6_TLV_JUMBO: u32 = 194;
+pub const IPV6_TLV_HAO: u32 = 201;
+pub const IPV6_ADDRFORM: u32 = 1;
+pub const IPV6_2292PKTINFO: u32 = 2;
+pub const IPV6_2292HOPOPTS: u32 = 3;
+pub const IPV6_2292DSTOPTS: u32 = 4;
+pub const IPV6_2292RTHDR: u32 = 5;
+pub const IPV6_2292PKTOPTIONS: u32 = 6;
+pub const IPV6_CHECKSUM: u32 = 7;
+pub const IPV6_2292HOPLIMIT: u32 = 8;
+pub const IPV6_NEXTHOP: u32 = 9;
+pub const IPV6_AUTHHDR: u32 = 10;
+pub const IPV6_FLOWINFO: u32 = 11;
+pub const IPV6_UNICAST_HOPS: u32 = 16;
+pub const IPV6_MULTICAST_IF: u32 = 17;
+pub const IPV6_MULTICAST_HOPS: u32 = 18;
+pub const IPV6_MULTICAST_LOOP: u32 = 19;
+pub const IPV6_ADD_MEMBERSHIP: u32 = 20;
+pub const IPV6_DROP_MEMBERSHIP: u32 = 21;
+pub const IPV6_ROUTER_ALERT: u32 = 22;
+pub const IPV6_MTU_DISCOVER: u32 = 23;
+pub const IPV6_MTU: u32 = 24;
+pub const IPV6_RECVERR: u32 = 25;
+pub const IPV6_V6ONLY: u32 = 26;
+pub const IPV6_JOIN_ANYCAST: u32 = 27;
+pub const IPV6_LEAVE_ANYCAST: u32 = 28;
+pub const IPV6_MULTICAST_ALL: u32 = 29;
+pub const IPV6_ROUTER_ALERT_ISOLATE: u32 = 30;
+pub const IPV6_PMTUDISC_DONT: u32 = 0;
+pub const IPV6_PMTUDISC_WANT: u32 = 1;
+pub const IPV6_PMTUDISC_DO: u32 = 2;
+pub const IPV6_PMTUDISC_PROBE: u32 = 3;
+pub const IPV6_PMTUDISC_INTERFACE: u32 = 4;
+pub const IPV6_PMTUDISC_OMIT: u32 = 5;
+pub const IPV6_FLOWLABEL_MGR: u32 = 32;
+pub const IPV6_FLOWINFO_SEND: u32 = 33;
+pub const IPV6_IPSEC_POLICY: u32 = 34;
+pub const IPV6_XFRM_POLICY: u32 = 35;
+pub const IPV6_HDRINCL: u32 = 36;
+pub const IPV6_RECVPKTINFO: u32 = 49;
+pub const IPV6_PKTINFO: u32 = 50;
+pub const IPV6_RECVHOPLIMIT: u32 = 51;
+pub const IPV6_HOPLIMIT: u32 = 52;
+pub const IPV6_RECVHOPOPTS: u32 = 53;
+pub const IPV6_HOPOPTS: u32 = 54;
+pub const IPV6_RTHDRDSTOPTS: u32 = 55;
+pub const IPV6_RECVRTHDR: u32 = 56;
+pub const IPV6_RTHDR: u32 = 57;
+pub const IPV6_RECVDSTOPTS: u32 = 58;
+pub const IPV6_DSTOPTS: u32 = 59;
+pub const IPV6_RECVPATHMTU: u32 = 60;
+pub const IPV6_PATHMTU: u32 = 61;
+pub const IPV6_DONTFRAG: u32 = 62;
+pub const IPV6_RECVTCLASS: u32 = 66;
+pub const IPV6_TCLASS: u32 = 67;
+pub const IPV6_AUTOFLOWLABEL: u32 = 70;
+pub const IPV6_ADDR_PREFERENCES: u32 = 72;
+pub const IPV6_PREFER_SRC_TMP: u32 = 1;
+pub const IPV6_PREFER_SRC_PUBLIC: u32 = 2;
+pub const IPV6_PREFER_SRC_PUBTMP_DEFAULT: u32 = 256;
+pub const IPV6_PREFER_SRC_COA: u32 = 4;
+pub const IPV6_PREFER_SRC_HOME: u32 = 1024;
+pub const IPV6_PREFER_SRC_CGA: u32 = 8;
+pub const IPV6_PREFER_SRC_NONCGA: u32 = 2048;
+pub const IPV6_MINHOPCOUNT: u32 = 73;
+pub const IPV6_ORIGDSTADDR: u32 = 74;
+pub const IPV6_RECVORIGDSTADDR: u32 = 74;
+pub const IPV6_TRANSPARENT: u32 = 75;
+pub const IPV6_UNICAST_IF: u32 = 76;
+pub const IPV6_RECVFRAGSIZE: u32 = 77;
+pub const IPV6_FREEBIND: u32 = 78;
+pub const IPV6_MIN_MTU: u32 = 1280;
+pub const IPV6_SRCRT_STRICT: u32 = 1;
+pub const IPV6_SRCRT_TYPE_0: u32 = 0;
+pub const IPV6_SRCRT_TYPE_2: u32 = 2;
+pub const IPV6_SRCRT_TYPE_4: u32 = 4;
+pub const IPV6_OPT_ROUTERALERT_MLD: u32 = 0;
+pub const ICMP_ECHOREPLY: u32 = 0;
+pub const ICMP_DEST_UNREACH: u32 = 3;
+pub const ICMP_SOURCE_QUENCH: u32 = 4;
+pub const ICMP_REDIRECT: u32 = 5;
+pub const ICMP_ECHO: u32 = 8;
+pub const ICMP_TIME_EXCEEDED: u32 = 11;
+pub const ICMP_PARAMETERPROB: u32 = 12;
+pub const ICMP_TIMESTAMP: u32 = 13;
+pub const ICMP_TIMESTAMPREPLY: u32 = 14;
+pub const ICMP_INFO_REQUEST: u32 = 15;
+pub const ICMP_INFO_REPLY: u32 = 16;
+pub const ICMP_ADDRESS: u32 = 17;
+pub const ICMP_ADDRESSREPLY: u32 = 18;
+pub const NR_ICMP_TYPES: u32 = 18;
+pub const ICMP_NET_UNREACH: u32 = 0;
+pub const ICMP_HOST_UNREACH: u32 = 1;
+pub const ICMP_PROT_UNREACH: u32 = 2;
+pub const ICMP_PORT_UNREACH: u32 = 3;
+pub const ICMP_FRAG_NEEDED: u32 = 4;
+pub const ICMP_SR_FAILED: u32 = 5;
+pub const ICMP_NET_UNKNOWN: u32 = 6;
+pub const ICMP_HOST_UNKNOWN: u32 = 7;
+pub const ICMP_HOST_ISOLATED: u32 = 8;
+pub const ICMP_NET_ANO: u32 = 9;
+pub const ICMP_HOST_ANO: u32 = 10;
+pub const ICMP_NET_UNR_TOS: u32 = 11;
+pub const ICMP_HOST_UNR_TOS: u32 = 12;
+pub const ICMP_PKT_FILTERED: u32 = 13;
+pub const ICMP_PREC_VIOLATION: u32 = 14;
+pub const ICMP_PREC_CUTOFF: u32 = 15;
+pub const NR_ICMP_UNREACH: u32 = 15;
+pub const ICMP_REDIR_NET: u32 = 0;
+pub const ICMP_REDIR_HOST: u32 = 1;
+pub const ICMP_REDIR_NETTOS: u32 = 2;
+pub const ICMP_REDIR_HOSTTOS: u32 = 3;
+pub const ICMP_EXC_TTL: u32 = 0;
+pub const ICMP_EXC_FRAGTIME: u32 = 1;
+pub const ICMP_FILTER: u32 = 1;
+pub const ICMPV6_ROUTER_PREF_LOW: u32 = 3;
+pub const ICMPV6_ROUTER_PREF_MEDIUM: u32 = 0;
+pub const ICMPV6_ROUTER_PREF_HIGH: u32 = 1;
+pub const ICMPV6_ROUTER_PREF_INVALID: u32 = 2;
+pub const ICMPV6_DEST_UNREACH: u32 = 1;
+pub const ICMPV6_PKT_TOOBIG: u32 = 2;
+pub const ICMPV6_TIME_EXCEED: u32 = 3;
+pub const ICMPV6_PARAMPROB: u32 = 4;
+pub const ICMPV6_ERRMSG_MAX: u32 = 127;
+pub const ICMPV6_INFOMSG_MASK: u32 = 128;
+pub const ICMPV6_ECHO_REQUEST: u32 = 128;
+pub const ICMPV6_ECHO_REPLY: u32 = 129;
+pub const ICMPV6_MGM_QUERY: u32 = 130;
+pub const ICMPV6_MGM_REPORT: u32 = 131;
+pub const ICMPV6_MGM_REDUCTION: u32 = 132;
+pub const ICMPV6_NI_QUERY: u32 = 139;
+pub const ICMPV6_NI_REPLY: u32 = 140;
+pub const ICMPV6_MLD2_REPORT: u32 = 143;
+pub const ICMPV6_DHAAD_REQUEST: u32 = 144;
+pub const ICMPV6_DHAAD_REPLY: u32 = 145;
+pub const ICMPV6_MOBILE_PREFIX_SOL: u32 = 146;
+pub const ICMPV6_MOBILE_PREFIX_ADV: u32 = 147;
+pub const ICMPV6_MRDISC_ADV: u32 = 151;
+pub const ICMPV6_MSG_MAX: u32 = 255;
+pub const ICMPV6_NOROUTE: u32 = 0;
+pub const ICMPV6_ADM_PROHIBITED: u32 = 1;
+pub const ICMPV6_NOT_NEIGHBOUR: u32 = 2;
+pub const ICMPV6_ADDR_UNREACH: u32 = 3;
+pub const ICMPV6_PORT_UNREACH: u32 = 4;
+pub const ICMPV6_POLICY_FAIL: u32 = 5;
+pub const ICMPV6_REJECT_ROUTE: u32 = 6;
+pub const ICMPV6_EXC_HOPLIMIT: u32 = 0;
+pub const ICMPV6_EXC_FRAGTIME: u32 = 1;
+pub const ICMPV6_HDR_FIELD: u32 = 0;
+pub const ICMPV6_UNK_NEXTHDR: u32 = 1;
+pub const ICMPV6_UNK_OPTION: u32 = 2;
+pub const ICMPV6_FILTER: u32 = 1;
+pub const ICMPV6_FILTER_BLOCK: u32 = 1;
+pub const ICMPV6_FILTER_PASS: u32 = 2;
+pub const ICMPV6_FILTER_BLOCKOTHERS: u32 = 3;
+pub const ICMPV6_FILTER_PASSONLY: u32 = 4;
+pub const MLD2_MODE_IS_INCLUDE: u32 = 1;
+pub const MLD2_MODE_IS_EXCLUDE: u32 = 2;
+pub const MLD2_CHANGE_TO_INCLUDE: u32 = 3;
+pub const MLD2_CHANGE_TO_EXCLUDE: u32 = 4;
+pub const MLD2_ALLOW_NEW_SOURCES: u32 = 5;
+pub const MLD2_BLOCK_OLD_SOURCES: u32 = 6;
+pub const UDP_CORK: u32 = 1;
+pub const UDP_ENCAP: u32 = 100;
+pub const UDP_NO_CHECK6_TX: u32 = 101;
+pub const UDP_NO_CHECK6_RX: u32 = 102;
+pub const UDP_SEGMENT: u32 = 103;
+pub const UDP_GRO: u32 = 104;
+pub const UDP_ENCAP_ESPINUDP_NON_IKE: u32 = 1;
+pub const UDP_ENCAP_ESPINUDP: u32 = 2;
+pub const UDP_ENCAP_L2TPINUDP: u32 = 3;
+pub const UDP_ENCAP_GTP0: u32 = 4;
+pub const UDP_ENCAP_GTP1U: u32 = 5;
+pub const UDP_ENCAP_RXRPC: u32 = 6;
+pub const _K_SS_MAXSIZE: u32 = 128;
+pub const TCP_MSS_DEFAULT: u32 = 536;
+pub const TCP_MSS_DESIRED: u32 = 1220;
+pub const TCP_NODELAY: u32 = 1;
+pub const TCP_MAXSEG: u32 = 2;
+pub const TCP_CORK: u32 = 3;
+pub const TCP_KEEPIDLE: u32 = 4;
+pub const TCP_KEEPINTVL: u32 = 5;
+pub const TCP_KEEPCNT: u32 = 6;
+pub const TCP_SYNCNT: u32 = 7;
+pub const TCP_LINGER2: u32 = 8;
+pub const TCP_DEFER_ACCEPT: u32 = 9;
+pub const TCP_WINDOW_CLAMP: u32 = 10;
+pub const TCP_INFO: u32 = 11;
+pub const TCP_QUICKACK: u32 = 12;
+pub const TCP_CONGESTION: u32 = 13;
+pub const TCP_MD5SIG: u32 = 14;
+pub const TCP_THIN_LINEAR_TIMEOUTS: u32 = 16;
+pub const TCP_THIN_DUPACK: u32 = 17;
+pub const TCP_USER_TIMEOUT: u32 = 18;
+pub const TCP_REPAIR: u32 = 19;
+pub const TCP_REPAIR_QUEUE: u32 = 20;
+pub const TCP_QUEUE_SEQ: u32 = 21;
+pub const TCP_REPAIR_OPTIONS: u32 = 22;
+pub const TCP_FASTOPEN: u32 = 23;
+pub const TCP_TIMESTAMP: u32 = 24;
+pub const TCP_NOTSENT_LOWAT: u32 = 25;
+pub const TCP_CC_INFO: u32 = 26;
+pub const TCP_SAVE_SYN: u32 = 27;
+pub const TCP_SAVED_SYN: u32 = 28;
+pub const TCP_REPAIR_WINDOW: u32 = 29;
+pub const TCP_FASTOPEN_CONNECT: u32 = 30;
+pub const TCP_ULP: u32 = 31;
+pub const TCP_MD5SIG_EXT: u32 = 32;
+pub const TCP_FASTOPEN_KEY: u32 = 33;
+pub const TCP_FASTOPEN_NO_COOKIE: u32 = 34;
+pub const TCP_ZEROCOPY_RECEIVE: u32 = 35;
+pub const TCP_INQ: u32 = 36;
+pub const TCP_CM_INQ: u32 = 36;
+pub const TCP_TX_DELAY: u32 = 37;
+pub const TCP_REPAIR_ON: u32 = 1;
+pub const TCP_REPAIR_OFF: u32 = 0;
+pub const TCP_REPAIR_OFF_NO_WP: i32 = -1;
+pub const TCPI_OPT_TIMESTAMPS: u32 = 1;
+pub const TCPI_OPT_SACK: u32 = 2;
+pub const TCPI_OPT_WSCALE: u32 = 4;
+pub const TCPI_OPT_ECN: u32 = 8;
+pub const TCPI_OPT_ECN_SEEN: u32 = 16;
+pub const TCPI_OPT_SYN_DATA: u32 = 32;
+pub const TCP_MD5SIG_MAXKEYLEN: u32 = 80;
+pub const TCP_MD5SIG_FLAG_PREFIX: u32 = 1;
+pub const IP_TOS: u32 = 1;
+pub const IP_TTL: u32 = 2;
+pub const IP_HDRINCL: u32 = 3;
+pub const IP_OPTIONS: u32 = 4;
+pub const IP_ROUTER_ALERT: u32 = 5;
+pub const IP_RECVOPTS: u32 = 6;
+pub const IP_RETOPTS: u32 = 7;
+pub const IP_PKTINFO: u32 = 8;
+pub const IP_PKTOPTIONS: u32 = 9;
+pub const IP_MTU_DISCOVER: u32 = 10;
+pub const IP_RECVERR: u32 = 11;
+pub const IP_RECVTTL: u32 = 12;
+pub const IP_RECVTOS: u32 = 13;
+pub const IP_MTU: u32 = 14;
+pub const IP_FREEBIND: u32 = 15;
+pub const IP_IPSEC_POLICY: u32 = 16;
+pub const IP_XFRM_POLICY: u32 = 17;
+pub const IP_PASSSEC: u32 = 18;
+pub const IP_TRANSPARENT: u32 = 19;
+pub const IP_RECVRETOPTS: u32 = 7;
+pub const IP_ORIGDSTADDR: u32 = 20;
+pub const IP_RECVORIGDSTADDR: u32 = 20;
+pub const IP_MINTTL: u32 = 21;
+pub const IP_NODEFRAG: u32 = 22;
+pub const IP_CHECKSUM: u32 = 23;
+pub const IP_BIND_ADDRESS_NO_PORT: u32 = 24;
+pub const IP_RECVFRAGSIZE: u32 = 25;
+pub const IP_PMTUDISC_DONT: u32 = 0;
+pub const IP_PMTUDISC_WANT: u32 = 1;
+pub const IP_PMTUDISC_DO: u32 = 2;
+pub const IP_PMTUDISC_PROBE: u32 = 3;
+pub const IP_PMTUDISC_INTERFACE: u32 = 4;
+pub const IP_PMTUDISC_OMIT: u32 = 5;
+pub const IP_MULTICAST_IF: u32 = 32;
+pub const IP_MULTICAST_TTL: u32 = 33;
+pub const IP_MULTICAST_LOOP: u32 = 34;
+pub const IP_ADD_MEMBERSHIP: u32 = 35;
+pub const IP_DROP_MEMBERSHIP: u32 = 36;
+pub const IP_UNBLOCK_SOURCE: u32 = 37;
+pub const IP_BLOCK_SOURCE: u32 = 38;
+pub const IP_ADD_SOURCE_MEMBERSHIP: u32 = 39;
+pub const IP_DROP_SOURCE_MEMBERSHIP: u32 = 40;
+pub const IP_MSFILTER: u32 = 41;
+pub const MCAST_JOIN_GROUP: u32 = 42;
+pub const MCAST_BLOCK_SOURCE: u32 = 43;
+pub const MCAST_UNBLOCK_SOURCE: u32 = 44;
+pub const MCAST_LEAVE_GROUP: u32 = 45;
+pub const MCAST_JOIN_SOURCE_GROUP: u32 = 46;
+pub const MCAST_LEAVE_SOURCE_GROUP: u32 = 47;
+pub const MCAST_MSFILTER: u32 = 48;
+pub const IP_MULTICAST_ALL: u32 = 49;
+pub const IP_UNICAST_IF: u32 = 50;
+pub const MCAST_EXCLUDE: u32 = 0;
+pub const MCAST_INCLUDE: u32 = 1;
+pub const IP_DEFAULT_MULTICAST_TTL: u32 = 1;
+pub const IP_DEFAULT_MULTICAST_LOOP: u32 = 1;
+pub const __SOCK_SIZE__: u32 = 16;
+pub const IN_CLASSA_NET: u32 = 4278190080;
+pub const IN_CLASSA_NSHIFT: u32 = 24;
+pub const IN_CLASSA_HOST: u32 = 16777215;
+pub const IN_CLASSA_MAX: u32 = 128;
+pub const IN_CLASSB_NET: u32 = 4294901760;
+pub const IN_CLASSB_NSHIFT: u32 = 16;
+pub const IN_CLASSB_HOST: u32 = 65535;
+pub const IN_CLASSB_MAX: u32 = 65536;
+pub const IN_CLASSC_NET: u32 = 4294967040;
+pub const IN_CLASSC_NSHIFT: u32 = 8;
+pub const IN_CLASSC_HOST: u32 = 255;
+pub const IN_MULTICAST_NET: u32 = 3758096384;
+pub const IN_CLASSE_NET: u32 = 4294967295;
+pub const IN_CLASSE_NSHIFT: u32 = 0;
+pub const IN_LOOPBACKNET: u32 = 127;
+pub const INADDR_LOOPBACK: u32 = 2130706433;
+pub const INADDR_UNSPEC_GROUP: u32 = 3758096384;
+pub const INADDR_ALLHOSTS_GROUP: u32 = 3758096385;
+pub const INADDR_ALLRTRS_GROUP: u32 = 3758096386;
+pub const INADDR_ALLSNOOPERS_GROUP: u32 = 3758096490;
+pub const INADDR_MAX_LOCAL_GROUP: u32 = 3758096639;
+pub const VLAN_MAX_DEPTH: u32 = 4;
+pub const IPV6_EXT_MAX_CHAIN: u32 = 6;
 pub type va_list = __builtin_va_list;
 pub type __gnuc_va_list = __builtin_va_list;
 pub type size_t = ::std::os::raw::c_ulong;
@@ -13299,6 +13884,5732 @@ fn bindgen_test_layout_datarec() {
             stringify!(datarec),
             "::",
             stringify!(rx_bytes)
+        )
+    );
+}
+#[repr(C, packed)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct ethhdr {
+    pub h_dest: [::std::os::raw::c_uchar; 6usize],
+    pub h_source: [::std::os::raw::c_uchar; 6usize],
+    pub h_proto: __be16,
+}
+#[test]
+fn bindgen_test_layout_ethhdr() {
+    assert_eq!(
+        ::std::mem::size_of::<ethhdr>(),
+        14usize,
+        concat!("Size of: ", stringify!(ethhdr))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ethhdr>(),
+        1usize,
+        concat!("Alignment of ", stringify!(ethhdr))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ethhdr>())).h_dest as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ethhdr),
+            "::",
+            stringify!(h_dest)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ethhdr>())).h_source as *const _ as usize },
+        6usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ethhdr),
+            "::",
+            stringify!(h_source)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ethhdr>())).h_proto as *const _ as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ethhdr),
+            "::",
+            stringify!(h_proto)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct sockaddr_pkt {
+    pub spkt_family: ::std::os::raw::c_ushort,
+    pub spkt_device: [::std::os::raw::c_uchar; 14usize],
+    pub spkt_protocol: __be16,
+}
+#[test]
+fn bindgen_test_layout_sockaddr_pkt() {
+    assert_eq!(
+        ::std::mem::size_of::<sockaddr_pkt>(),
+        18usize,
+        concat!("Size of: ", stringify!(sockaddr_pkt))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<sockaddr_pkt>(),
+        2usize,
+        concat!("Alignment of ", stringify!(sockaddr_pkt))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<sockaddr_pkt>())).spkt_family as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sockaddr_pkt),
+            "::",
+            stringify!(spkt_family)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<sockaddr_pkt>())).spkt_device as *const _ as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sockaddr_pkt),
+            "::",
+            stringify!(spkt_device)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<sockaddr_pkt>())).spkt_protocol as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sockaddr_pkt),
+            "::",
+            stringify!(spkt_protocol)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct sockaddr_ll {
+    pub sll_family: ::std::os::raw::c_ushort,
+    pub sll_protocol: __be16,
+    pub sll_ifindex: ::std::os::raw::c_int,
+    pub sll_hatype: ::std::os::raw::c_ushort,
+    pub sll_pkttype: ::std::os::raw::c_uchar,
+    pub sll_halen: ::std::os::raw::c_uchar,
+    pub sll_addr: [::std::os::raw::c_uchar; 8usize],
+}
+#[test]
+fn bindgen_test_layout_sockaddr_ll() {
+    assert_eq!(
+        ::std::mem::size_of::<sockaddr_ll>(),
+        20usize,
+        concat!("Size of: ", stringify!(sockaddr_ll))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<sockaddr_ll>(),
+        4usize,
+        concat!("Alignment of ", stringify!(sockaddr_ll))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<sockaddr_ll>())).sll_family as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sockaddr_ll),
+            "::",
+            stringify!(sll_family)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<sockaddr_ll>())).sll_protocol as *const _ as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sockaddr_ll),
+            "::",
+            stringify!(sll_protocol)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<sockaddr_ll>())).sll_ifindex as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sockaddr_ll),
+            "::",
+            stringify!(sll_ifindex)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<sockaddr_ll>())).sll_hatype as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sockaddr_ll),
+            "::",
+            stringify!(sll_hatype)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<sockaddr_ll>())).sll_pkttype as *const _ as usize },
+        10usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sockaddr_ll),
+            "::",
+            stringify!(sll_pkttype)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<sockaddr_ll>())).sll_halen as *const _ as usize },
+        11usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sockaddr_ll),
+            "::",
+            stringify!(sll_halen)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<sockaddr_ll>())).sll_addr as *const _ as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sockaddr_ll),
+            "::",
+            stringify!(sll_addr)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct tpacket_stats {
+    pub tp_packets: ::std::os::raw::c_uint,
+    pub tp_drops: ::std::os::raw::c_uint,
+}
+#[test]
+fn bindgen_test_layout_tpacket_stats() {
+    assert_eq!(
+        ::std::mem::size_of::<tpacket_stats>(),
+        8usize,
+        concat!("Size of: ", stringify!(tpacket_stats))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<tpacket_stats>(),
+        4usize,
+        concat!("Alignment of ", stringify!(tpacket_stats))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_stats>())).tp_packets as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_stats),
+            "::",
+            stringify!(tp_packets)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_stats>())).tp_drops as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_stats),
+            "::",
+            stringify!(tp_drops)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct tpacket_stats_v3 {
+    pub tp_packets: ::std::os::raw::c_uint,
+    pub tp_drops: ::std::os::raw::c_uint,
+    pub tp_freeze_q_cnt: ::std::os::raw::c_uint,
+}
+#[test]
+fn bindgen_test_layout_tpacket_stats_v3() {
+    assert_eq!(
+        ::std::mem::size_of::<tpacket_stats_v3>(),
+        12usize,
+        concat!("Size of: ", stringify!(tpacket_stats_v3))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<tpacket_stats_v3>(),
+        4usize,
+        concat!("Alignment of ", stringify!(tpacket_stats_v3))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_stats_v3>())).tp_packets as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_stats_v3),
+            "::",
+            stringify!(tp_packets)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_stats_v3>())).tp_drops as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_stats_v3),
+            "::",
+            stringify!(tp_drops)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<tpacket_stats_v3>())).tp_freeze_q_cnt as *const _ as usize
+        },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_stats_v3),
+            "::",
+            stringify!(tp_freeze_q_cnt)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct tpacket_rollover_stats {
+    pub tp_all: __u64,
+    pub tp_huge: __u64,
+    pub tp_failed: __u64,
+}
+#[test]
+fn bindgen_test_layout_tpacket_rollover_stats() {
+    assert_eq!(
+        ::std::mem::size_of::<tpacket_rollover_stats>(),
+        24usize,
+        concat!("Size of: ", stringify!(tpacket_rollover_stats))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<tpacket_rollover_stats>(),
+        8usize,
+        concat!("Alignment of ", stringify!(tpacket_rollover_stats))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_rollover_stats>())).tp_all as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_rollover_stats),
+            "::",
+            stringify!(tp_all)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_rollover_stats>())).tp_huge as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_rollover_stats),
+            "::",
+            stringify!(tp_huge)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<tpacket_rollover_stats>())).tp_failed as *const _ as usize
+        },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_rollover_stats),
+            "::",
+            stringify!(tp_failed)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union tpacket_stats_u {
+    pub stats1: tpacket_stats,
+    pub stats3: tpacket_stats_v3,
+}
+#[test]
+fn bindgen_test_layout_tpacket_stats_u() {
+    assert_eq!(
+        ::std::mem::size_of::<tpacket_stats_u>(),
+        12usize,
+        concat!("Size of: ", stringify!(tpacket_stats_u))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<tpacket_stats_u>(),
+        4usize,
+        concat!("Alignment of ", stringify!(tpacket_stats_u))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_stats_u>())).stats1 as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_stats_u),
+            "::",
+            stringify!(stats1)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_stats_u>())).stats3 as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_stats_u),
+            "::",
+            stringify!(stats3)
+        )
+    );
+}
+impl Default for tpacket_stats_u {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct tpacket_auxdata {
+    pub tp_status: __u32,
+    pub tp_len: __u32,
+    pub tp_snaplen: __u32,
+    pub tp_mac: __u16,
+    pub tp_net: __u16,
+    pub tp_vlan_tci: __u16,
+    pub tp_vlan_tpid: __u16,
+}
+#[test]
+fn bindgen_test_layout_tpacket_auxdata() {
+    assert_eq!(
+        ::std::mem::size_of::<tpacket_auxdata>(),
+        20usize,
+        concat!("Size of: ", stringify!(tpacket_auxdata))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<tpacket_auxdata>(),
+        4usize,
+        concat!("Alignment of ", stringify!(tpacket_auxdata))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_auxdata>())).tp_status as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_auxdata),
+            "::",
+            stringify!(tp_status)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_auxdata>())).tp_len as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_auxdata),
+            "::",
+            stringify!(tp_len)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_auxdata>())).tp_snaplen as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_auxdata),
+            "::",
+            stringify!(tp_snaplen)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_auxdata>())).tp_mac as *const _ as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_auxdata),
+            "::",
+            stringify!(tp_mac)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_auxdata>())).tp_net as *const _ as usize },
+        14usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_auxdata),
+            "::",
+            stringify!(tp_net)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_auxdata>())).tp_vlan_tci as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_auxdata),
+            "::",
+            stringify!(tp_vlan_tci)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_auxdata>())).tp_vlan_tpid as *const _ as usize },
+        18usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_auxdata),
+            "::",
+            stringify!(tp_vlan_tpid)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct tpacket_hdr {
+    pub tp_status: ::std::os::raw::c_ulong,
+    pub tp_len: ::std::os::raw::c_uint,
+    pub tp_snaplen: ::std::os::raw::c_uint,
+    pub tp_mac: ::std::os::raw::c_ushort,
+    pub tp_net: ::std::os::raw::c_ushort,
+    pub tp_sec: ::std::os::raw::c_uint,
+    pub tp_usec: ::std::os::raw::c_uint,
+}
+#[test]
+fn bindgen_test_layout_tpacket_hdr() {
+    assert_eq!(
+        ::std::mem::size_of::<tpacket_hdr>(),
+        32usize,
+        concat!("Size of: ", stringify!(tpacket_hdr))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<tpacket_hdr>(),
+        8usize,
+        concat!("Alignment of ", stringify!(tpacket_hdr))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_hdr>())).tp_status as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_hdr),
+            "::",
+            stringify!(tp_status)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_hdr>())).tp_len as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_hdr),
+            "::",
+            stringify!(tp_len)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_hdr>())).tp_snaplen as *const _ as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_hdr),
+            "::",
+            stringify!(tp_snaplen)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_hdr>())).tp_mac as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_hdr),
+            "::",
+            stringify!(tp_mac)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_hdr>())).tp_net as *const _ as usize },
+        18usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_hdr),
+            "::",
+            stringify!(tp_net)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_hdr>())).tp_sec as *const _ as usize },
+        20usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_hdr),
+            "::",
+            stringify!(tp_sec)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_hdr>())).tp_usec as *const _ as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_hdr),
+            "::",
+            stringify!(tp_usec)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct tpacket2_hdr {
+    pub tp_status: __u32,
+    pub tp_len: __u32,
+    pub tp_snaplen: __u32,
+    pub tp_mac: __u16,
+    pub tp_net: __u16,
+    pub tp_sec: __u32,
+    pub tp_nsec: __u32,
+    pub tp_vlan_tci: __u16,
+    pub tp_vlan_tpid: __u16,
+    pub tp_padding: [__u8; 4usize],
+}
+#[test]
+fn bindgen_test_layout_tpacket2_hdr() {
+    assert_eq!(
+        ::std::mem::size_of::<tpacket2_hdr>(),
+        32usize,
+        concat!("Size of: ", stringify!(tpacket2_hdr))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<tpacket2_hdr>(),
+        4usize,
+        concat!("Alignment of ", stringify!(tpacket2_hdr))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket2_hdr>())).tp_status as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket2_hdr),
+            "::",
+            stringify!(tp_status)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket2_hdr>())).tp_len as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket2_hdr),
+            "::",
+            stringify!(tp_len)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket2_hdr>())).tp_snaplen as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket2_hdr),
+            "::",
+            stringify!(tp_snaplen)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket2_hdr>())).tp_mac as *const _ as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket2_hdr),
+            "::",
+            stringify!(tp_mac)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket2_hdr>())).tp_net as *const _ as usize },
+        14usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket2_hdr),
+            "::",
+            stringify!(tp_net)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket2_hdr>())).tp_sec as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket2_hdr),
+            "::",
+            stringify!(tp_sec)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket2_hdr>())).tp_nsec as *const _ as usize },
+        20usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket2_hdr),
+            "::",
+            stringify!(tp_nsec)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket2_hdr>())).tp_vlan_tci as *const _ as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket2_hdr),
+            "::",
+            stringify!(tp_vlan_tci)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket2_hdr>())).tp_vlan_tpid as *const _ as usize },
+        26usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket2_hdr),
+            "::",
+            stringify!(tp_vlan_tpid)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket2_hdr>())).tp_padding as *const _ as usize },
+        28usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket2_hdr),
+            "::",
+            stringify!(tp_padding)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct tpacket_hdr_variant1 {
+    pub tp_rxhash: __u32,
+    pub tp_vlan_tci: __u32,
+    pub tp_vlan_tpid: __u16,
+    pub tp_padding: __u16,
+}
+#[test]
+fn bindgen_test_layout_tpacket_hdr_variant1() {
+    assert_eq!(
+        ::std::mem::size_of::<tpacket_hdr_variant1>(),
+        12usize,
+        concat!("Size of: ", stringify!(tpacket_hdr_variant1))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<tpacket_hdr_variant1>(),
+        4usize,
+        concat!("Alignment of ", stringify!(tpacket_hdr_variant1))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_hdr_variant1>())).tp_rxhash as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_hdr_variant1),
+            "::",
+            stringify!(tp_rxhash)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<tpacket_hdr_variant1>())).tp_vlan_tci as *const _ as usize
+        },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_hdr_variant1),
+            "::",
+            stringify!(tp_vlan_tci)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<tpacket_hdr_variant1>())).tp_vlan_tpid as *const _ as usize
+        },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_hdr_variant1),
+            "::",
+            stringify!(tp_vlan_tpid)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_hdr_variant1>())).tp_padding as *const _ as usize },
+        10usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_hdr_variant1),
+            "::",
+            stringify!(tp_padding)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct tpacket3_hdr {
+    pub tp_next_offset: __u32,
+    pub tp_sec: __u32,
+    pub tp_nsec: __u32,
+    pub tp_snaplen: __u32,
+    pub tp_len: __u32,
+    pub tp_status: __u32,
+    pub tp_mac: __u16,
+    pub tp_net: __u16,
+    pub __bindgen_anon_1: tpacket3_hdr__bindgen_ty_1,
+    pub tp_padding: [__u8; 8usize],
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union tpacket3_hdr__bindgen_ty_1 {
+    pub hv1: tpacket_hdr_variant1,
+}
+#[test]
+fn bindgen_test_layout_tpacket3_hdr__bindgen_ty_1() {
+    assert_eq!(
+        ::std::mem::size_of::<tpacket3_hdr__bindgen_ty_1>(),
+        12usize,
+        concat!("Size of: ", stringify!(tpacket3_hdr__bindgen_ty_1))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<tpacket3_hdr__bindgen_ty_1>(),
+        4usize,
+        concat!("Alignment of ", stringify!(tpacket3_hdr__bindgen_ty_1))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket3_hdr__bindgen_ty_1>())).hv1 as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket3_hdr__bindgen_ty_1),
+            "::",
+            stringify!(hv1)
+        )
+    );
+}
+impl Default for tpacket3_hdr__bindgen_ty_1 {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[test]
+fn bindgen_test_layout_tpacket3_hdr() {
+    assert_eq!(
+        ::std::mem::size_of::<tpacket3_hdr>(),
+        48usize,
+        concat!("Size of: ", stringify!(tpacket3_hdr))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<tpacket3_hdr>(),
+        4usize,
+        concat!("Alignment of ", stringify!(tpacket3_hdr))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket3_hdr>())).tp_next_offset as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket3_hdr),
+            "::",
+            stringify!(tp_next_offset)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket3_hdr>())).tp_sec as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket3_hdr),
+            "::",
+            stringify!(tp_sec)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket3_hdr>())).tp_nsec as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket3_hdr),
+            "::",
+            stringify!(tp_nsec)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket3_hdr>())).tp_snaplen as *const _ as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket3_hdr),
+            "::",
+            stringify!(tp_snaplen)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket3_hdr>())).tp_len as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket3_hdr),
+            "::",
+            stringify!(tp_len)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket3_hdr>())).tp_status as *const _ as usize },
+        20usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket3_hdr),
+            "::",
+            stringify!(tp_status)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket3_hdr>())).tp_mac as *const _ as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket3_hdr),
+            "::",
+            stringify!(tp_mac)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket3_hdr>())).tp_net as *const _ as usize },
+        26usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket3_hdr),
+            "::",
+            stringify!(tp_net)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket3_hdr>())).tp_padding as *const _ as usize },
+        40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket3_hdr),
+            "::",
+            stringify!(tp_padding)
+        )
+    );
+}
+impl Default for tpacket3_hdr {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct tpacket_bd_ts {
+    pub ts_sec: ::std::os::raw::c_uint,
+    pub __bindgen_anon_1: tpacket_bd_ts__bindgen_ty_1,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union tpacket_bd_ts__bindgen_ty_1 {
+    pub ts_usec: ::std::os::raw::c_uint,
+    pub ts_nsec: ::std::os::raw::c_uint,
+}
+#[test]
+fn bindgen_test_layout_tpacket_bd_ts__bindgen_ty_1() {
+    assert_eq!(
+        ::std::mem::size_of::<tpacket_bd_ts__bindgen_ty_1>(),
+        4usize,
+        concat!("Size of: ", stringify!(tpacket_bd_ts__bindgen_ty_1))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<tpacket_bd_ts__bindgen_ty_1>(),
+        4usize,
+        concat!("Alignment of ", stringify!(tpacket_bd_ts__bindgen_ty_1))
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<tpacket_bd_ts__bindgen_ty_1>())).ts_usec as *const _ as usize
+        },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_bd_ts__bindgen_ty_1),
+            "::",
+            stringify!(ts_usec)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<tpacket_bd_ts__bindgen_ty_1>())).ts_nsec as *const _ as usize
+        },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_bd_ts__bindgen_ty_1),
+            "::",
+            stringify!(ts_nsec)
+        )
+    );
+}
+impl Default for tpacket_bd_ts__bindgen_ty_1 {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[test]
+fn bindgen_test_layout_tpacket_bd_ts() {
+    assert_eq!(
+        ::std::mem::size_of::<tpacket_bd_ts>(),
+        8usize,
+        concat!("Size of: ", stringify!(tpacket_bd_ts))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<tpacket_bd_ts>(),
+        4usize,
+        concat!("Alignment of ", stringify!(tpacket_bd_ts))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_bd_ts>())).ts_sec as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_bd_ts),
+            "::",
+            stringify!(ts_sec)
+        )
+    );
+}
+impl Default for tpacket_bd_ts {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct tpacket_hdr_v1 {
+    pub block_status: __u32,
+    pub num_pkts: __u32,
+    pub offset_to_first_pkt: __u32,
+    pub blk_len: __u32,
+    pub seq_num: __u64,
+    pub ts_first_pkt: tpacket_bd_ts,
+    pub ts_last_pkt: tpacket_bd_ts,
+}
+#[test]
+fn bindgen_test_layout_tpacket_hdr_v1() {
+    assert_eq!(
+        ::std::mem::size_of::<tpacket_hdr_v1>(),
+        40usize,
+        concat!("Size of: ", stringify!(tpacket_hdr_v1))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<tpacket_hdr_v1>(),
+        8usize,
+        concat!("Alignment of ", stringify!(tpacket_hdr_v1))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_hdr_v1>())).block_status as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_hdr_v1),
+            "::",
+            stringify!(block_status)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_hdr_v1>())).num_pkts as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_hdr_v1),
+            "::",
+            stringify!(num_pkts)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<tpacket_hdr_v1>())).offset_to_first_pkt as *const _ as usize
+        },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_hdr_v1),
+            "::",
+            stringify!(offset_to_first_pkt)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_hdr_v1>())).blk_len as *const _ as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_hdr_v1),
+            "::",
+            stringify!(blk_len)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_hdr_v1>())).seq_num as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_hdr_v1),
+            "::",
+            stringify!(seq_num)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_hdr_v1>())).ts_first_pkt as *const _ as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_hdr_v1),
+            "::",
+            stringify!(ts_first_pkt)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_hdr_v1>())).ts_last_pkt as *const _ as usize },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_hdr_v1),
+            "::",
+            stringify!(ts_last_pkt)
+        )
+    );
+}
+impl Default for tpacket_hdr_v1 {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union tpacket_bd_header_u {
+    pub bh1: tpacket_hdr_v1,
+}
+#[test]
+fn bindgen_test_layout_tpacket_bd_header_u() {
+    assert_eq!(
+        ::std::mem::size_of::<tpacket_bd_header_u>(),
+        40usize,
+        concat!("Size of: ", stringify!(tpacket_bd_header_u))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<tpacket_bd_header_u>(),
+        8usize,
+        concat!("Alignment of ", stringify!(tpacket_bd_header_u))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_bd_header_u>())).bh1 as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_bd_header_u),
+            "::",
+            stringify!(bh1)
+        )
+    );
+}
+impl Default for tpacket_bd_header_u {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct tpacket_block_desc {
+    pub version: __u32,
+    pub offset_to_priv: __u32,
+    pub hdr: tpacket_bd_header_u,
+}
+#[test]
+fn bindgen_test_layout_tpacket_block_desc() {
+    assert_eq!(
+        ::std::mem::size_of::<tpacket_block_desc>(),
+        48usize,
+        concat!("Size of: ", stringify!(tpacket_block_desc))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<tpacket_block_desc>(),
+        8usize,
+        concat!("Alignment of ", stringify!(tpacket_block_desc))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_block_desc>())).version as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_block_desc),
+            "::",
+            stringify!(version)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<tpacket_block_desc>())).offset_to_priv as *const _ as usize
+        },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_block_desc),
+            "::",
+            stringify!(offset_to_priv)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_block_desc>())).hdr as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_block_desc),
+            "::",
+            stringify!(hdr)
+        )
+    );
+}
+impl Default for tpacket_block_desc {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+pub const tpacket_versions_TPACKET_V1: tpacket_versions = 0;
+pub const tpacket_versions_TPACKET_V2: tpacket_versions = 1;
+pub const tpacket_versions_TPACKET_V3: tpacket_versions = 2;
+pub type tpacket_versions = ::std::os::raw::c_uint;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct tpacket_req {
+    pub tp_block_size: ::std::os::raw::c_uint,
+    pub tp_block_nr: ::std::os::raw::c_uint,
+    pub tp_frame_size: ::std::os::raw::c_uint,
+    pub tp_frame_nr: ::std::os::raw::c_uint,
+}
+#[test]
+fn bindgen_test_layout_tpacket_req() {
+    assert_eq!(
+        ::std::mem::size_of::<tpacket_req>(),
+        16usize,
+        concat!("Size of: ", stringify!(tpacket_req))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<tpacket_req>(),
+        4usize,
+        concat!("Alignment of ", stringify!(tpacket_req))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_req>())).tp_block_size as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_req),
+            "::",
+            stringify!(tp_block_size)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_req>())).tp_block_nr as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_req),
+            "::",
+            stringify!(tp_block_nr)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_req>())).tp_frame_size as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_req),
+            "::",
+            stringify!(tp_frame_size)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_req>())).tp_frame_nr as *const _ as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_req),
+            "::",
+            stringify!(tp_frame_nr)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct tpacket_req3 {
+    pub tp_block_size: ::std::os::raw::c_uint,
+    pub tp_block_nr: ::std::os::raw::c_uint,
+    pub tp_frame_size: ::std::os::raw::c_uint,
+    pub tp_frame_nr: ::std::os::raw::c_uint,
+    pub tp_retire_blk_tov: ::std::os::raw::c_uint,
+    pub tp_sizeof_priv: ::std::os::raw::c_uint,
+    pub tp_feature_req_word: ::std::os::raw::c_uint,
+}
+#[test]
+fn bindgen_test_layout_tpacket_req3() {
+    assert_eq!(
+        ::std::mem::size_of::<tpacket_req3>(),
+        28usize,
+        concat!("Size of: ", stringify!(tpacket_req3))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<tpacket_req3>(),
+        4usize,
+        concat!("Alignment of ", stringify!(tpacket_req3))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_req3>())).tp_block_size as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_req3),
+            "::",
+            stringify!(tp_block_size)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_req3>())).tp_block_nr as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_req3),
+            "::",
+            stringify!(tp_block_nr)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_req3>())).tp_frame_size as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_req3),
+            "::",
+            stringify!(tp_frame_size)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_req3>())).tp_frame_nr as *const _ as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_req3),
+            "::",
+            stringify!(tp_frame_nr)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_req3>())).tp_retire_blk_tov as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_req3),
+            "::",
+            stringify!(tp_retire_blk_tov)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_req3>())).tp_sizeof_priv as *const _ as usize },
+        20usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_req3),
+            "::",
+            stringify!(tp_sizeof_priv)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<tpacket_req3>())).tp_feature_req_word as *const _ as usize
+        },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_req3),
+            "::",
+            stringify!(tp_feature_req_word)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union tpacket_req_u {
+    pub req: tpacket_req,
+    pub req3: tpacket_req3,
+}
+#[test]
+fn bindgen_test_layout_tpacket_req_u() {
+    assert_eq!(
+        ::std::mem::size_of::<tpacket_req_u>(),
+        28usize,
+        concat!("Size of: ", stringify!(tpacket_req_u))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<tpacket_req_u>(),
+        4usize,
+        concat!("Alignment of ", stringify!(tpacket_req_u))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_req_u>())).req as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_req_u),
+            "::",
+            stringify!(req)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tpacket_req_u>())).req3 as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tpacket_req_u),
+            "::",
+            stringify!(req3)
+        )
+    );
+}
+impl Default for tpacket_req_u {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct packet_mreq {
+    pub mr_ifindex: ::std::os::raw::c_int,
+    pub mr_type: ::std::os::raw::c_ushort,
+    pub mr_alen: ::std::os::raw::c_ushort,
+    pub mr_address: [::std::os::raw::c_uchar; 8usize],
+}
+#[test]
+fn bindgen_test_layout_packet_mreq() {
+    assert_eq!(
+        ::std::mem::size_of::<packet_mreq>(),
+        16usize,
+        concat!("Size of: ", stringify!(packet_mreq))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<packet_mreq>(),
+        4usize,
+        concat!("Alignment of ", stringify!(packet_mreq))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<packet_mreq>())).mr_ifindex as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(packet_mreq),
+            "::",
+            stringify!(mr_ifindex)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<packet_mreq>())).mr_type as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(packet_mreq),
+            "::",
+            stringify!(mr_type)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<packet_mreq>())).mr_alen as *const _ as usize },
+        6usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(packet_mreq),
+            "::",
+            stringify!(mr_alen)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<packet_mreq>())).mr_address as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(packet_mreq),
+            "::",
+            stringify!(mr_address)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct iphdr {
+    pub _bitfield_align_1: [u8; 0],
+    pub _bitfield_1: __BindgenBitfieldUnit<[u8; 1usize]>,
+    pub tos: __u8,
+    pub tot_len: __be16,
+    pub id: __be16,
+    pub frag_off: __be16,
+    pub ttl: __u8,
+    pub protocol: __u8,
+    pub check: __sum16,
+    pub saddr: __be32,
+    pub daddr: __be32,
+}
+#[test]
+fn bindgen_test_layout_iphdr() {
+    assert_eq!(
+        ::std::mem::size_of::<iphdr>(),
+        20usize,
+        concat!("Size of: ", stringify!(iphdr))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<iphdr>(),
+        4usize,
+        concat!("Alignment of ", stringify!(iphdr))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<iphdr>())).tos as *const _ as usize },
+        1usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(iphdr),
+            "::",
+            stringify!(tos)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<iphdr>())).tot_len as *const _ as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(iphdr),
+            "::",
+            stringify!(tot_len)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<iphdr>())).id as *const _ as usize },
+        4usize,
+        concat!("Offset of field: ", stringify!(iphdr), "::", stringify!(id))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<iphdr>())).frag_off as *const _ as usize },
+        6usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(iphdr),
+            "::",
+            stringify!(frag_off)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<iphdr>())).ttl as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(iphdr),
+            "::",
+            stringify!(ttl)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<iphdr>())).protocol as *const _ as usize },
+        9usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(iphdr),
+            "::",
+            stringify!(protocol)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<iphdr>())).check as *const _ as usize },
+        10usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(iphdr),
+            "::",
+            stringify!(check)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<iphdr>())).saddr as *const _ as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(iphdr),
+            "::",
+            stringify!(saddr)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<iphdr>())).daddr as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(iphdr),
+            "::",
+            stringify!(daddr)
+        )
+    );
+}
+impl iphdr {
+    #[inline]
+    pub fn ihl(&self) -> __u8 {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 4u8) as u8) }
+    }
+    #[inline]
+    pub fn set_ihl(&mut self, val: __u8) {
+        unsafe {
+            let val: u8 = ::std::mem::transmute(val);
+            self._bitfield_1.set(0usize, 4u8, val as u64)
+        }
+    }
+    #[inline]
+    pub fn version(&self) -> __u8 {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(4usize, 4u8) as u8) }
+    }
+    #[inline]
+    pub fn set_version(&mut self, val: __u8) {
+        unsafe {
+            let val: u8 = ::std::mem::transmute(val);
+            self._bitfield_1.set(4usize, 4u8, val as u64)
+        }
+    }
+    #[inline]
+    pub fn new_bitfield_1(ihl: __u8, version: __u8) -> __BindgenBitfieldUnit<[u8; 1usize]> {
+        let mut __bindgen_bitfield_unit: __BindgenBitfieldUnit<[u8; 1usize]> = Default::default();
+        __bindgen_bitfield_unit.set(0usize, 4u8, {
+            let ihl: u8 = unsafe { ::std::mem::transmute(ihl) };
+            ihl as u64
+        });
+        __bindgen_bitfield_unit.set(4usize, 4u8, {
+            let version: u8 = unsafe { ::std::mem::transmute(version) };
+            version as u64
+        });
+        __bindgen_bitfield_unit
+    }
+}
+#[repr(C)]
+#[derive(Debug, Default)]
+pub struct ip_auth_hdr {
+    pub nexthdr: __u8,
+    pub hdrlen: __u8,
+    pub reserved: __be16,
+    pub spi: __be32,
+    pub seq_no: __be32,
+    pub auth_data: __IncompleteArrayField<__u8>,
+}
+#[test]
+fn bindgen_test_layout_ip_auth_hdr() {
+    assert_eq!(
+        ::std::mem::size_of::<ip_auth_hdr>(),
+        12usize,
+        concat!("Size of: ", stringify!(ip_auth_hdr))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ip_auth_hdr>(),
+        4usize,
+        concat!("Alignment of ", stringify!(ip_auth_hdr))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip_auth_hdr>())).nexthdr as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_auth_hdr),
+            "::",
+            stringify!(nexthdr)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip_auth_hdr>())).hdrlen as *const _ as usize },
+        1usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_auth_hdr),
+            "::",
+            stringify!(hdrlen)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip_auth_hdr>())).reserved as *const _ as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_auth_hdr),
+            "::",
+            stringify!(reserved)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip_auth_hdr>())).spi as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_auth_hdr),
+            "::",
+            stringify!(spi)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip_auth_hdr>())).seq_no as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_auth_hdr),
+            "::",
+            stringify!(seq_no)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip_auth_hdr>())).auth_data as *const _ as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_auth_hdr),
+            "::",
+            stringify!(auth_data)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Default)]
+pub struct ip_esp_hdr {
+    pub spi: __be32,
+    pub seq_no: __be32,
+    pub enc_data: __IncompleteArrayField<__u8>,
+}
+#[test]
+fn bindgen_test_layout_ip_esp_hdr() {
+    assert_eq!(
+        ::std::mem::size_of::<ip_esp_hdr>(),
+        8usize,
+        concat!("Size of: ", stringify!(ip_esp_hdr))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ip_esp_hdr>(),
+        4usize,
+        concat!("Alignment of ", stringify!(ip_esp_hdr))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip_esp_hdr>())).spi as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_esp_hdr),
+            "::",
+            stringify!(spi)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip_esp_hdr>())).seq_no as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_esp_hdr),
+            "::",
+            stringify!(seq_no)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip_esp_hdr>())).enc_data as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_esp_hdr),
+            "::",
+            stringify!(enc_data)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct ip_comp_hdr {
+    pub nexthdr: __u8,
+    pub flags: __u8,
+    pub cpi: __be16,
+}
+#[test]
+fn bindgen_test_layout_ip_comp_hdr() {
+    assert_eq!(
+        ::std::mem::size_of::<ip_comp_hdr>(),
+        4usize,
+        concat!("Size of: ", stringify!(ip_comp_hdr))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ip_comp_hdr>(),
+        2usize,
+        concat!("Alignment of ", stringify!(ip_comp_hdr))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip_comp_hdr>())).nexthdr as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_comp_hdr),
+            "::",
+            stringify!(nexthdr)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip_comp_hdr>())).flags as *const _ as usize },
+        1usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_comp_hdr),
+            "::",
+            stringify!(flags)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip_comp_hdr>())).cpi as *const _ as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_comp_hdr),
+            "::",
+            stringify!(cpi)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct ip_beet_phdr {
+    pub nexthdr: __u8,
+    pub hdrlen: __u8,
+    pub padlen: __u8,
+    pub reserved: __u8,
+}
+#[test]
+fn bindgen_test_layout_ip_beet_phdr() {
+    assert_eq!(
+        ::std::mem::size_of::<ip_beet_phdr>(),
+        4usize,
+        concat!("Size of: ", stringify!(ip_beet_phdr))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ip_beet_phdr>(),
+        1usize,
+        concat!("Alignment of ", stringify!(ip_beet_phdr))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip_beet_phdr>())).nexthdr as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_beet_phdr),
+            "::",
+            stringify!(nexthdr)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip_beet_phdr>())).hdrlen as *const _ as usize },
+        1usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_beet_phdr),
+            "::",
+            stringify!(hdrlen)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip_beet_phdr>())).padlen as *const _ as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_beet_phdr),
+            "::",
+            stringify!(padlen)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip_beet_phdr>())).reserved as *const _ as usize },
+        3usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_beet_phdr),
+            "::",
+            stringify!(reserved)
+        )
+    );
+}
+pub const IPV4_DEVCONF_FORWARDING: ::std::os::raw::c_uint = 1;
+pub const IPV4_DEVCONF_MC_FORWARDING: ::std::os::raw::c_uint = 2;
+pub const IPV4_DEVCONF_PROXY_ARP: ::std::os::raw::c_uint = 3;
+pub const IPV4_DEVCONF_ACCEPT_REDIRECTS: ::std::os::raw::c_uint = 4;
+pub const IPV4_DEVCONF_SECURE_REDIRECTS: ::std::os::raw::c_uint = 5;
+pub const IPV4_DEVCONF_SEND_REDIRECTS: ::std::os::raw::c_uint = 6;
+pub const IPV4_DEVCONF_SHARED_MEDIA: ::std::os::raw::c_uint = 7;
+pub const IPV4_DEVCONF_RP_FILTER: ::std::os::raw::c_uint = 8;
+pub const IPV4_DEVCONF_ACCEPT_SOURCE_ROUTE: ::std::os::raw::c_uint = 9;
+pub const IPV4_DEVCONF_BOOTP_RELAY: ::std::os::raw::c_uint = 10;
+pub const IPV4_DEVCONF_LOG_MARTIANS: ::std::os::raw::c_uint = 11;
+pub const IPV4_DEVCONF_TAG: ::std::os::raw::c_uint = 12;
+pub const IPV4_DEVCONF_ARPFILTER: ::std::os::raw::c_uint = 13;
+pub const IPV4_DEVCONF_MEDIUM_ID: ::std::os::raw::c_uint = 14;
+pub const IPV4_DEVCONF_NOXFRM: ::std::os::raw::c_uint = 15;
+pub const IPV4_DEVCONF_NOPOLICY: ::std::os::raw::c_uint = 16;
+pub const IPV4_DEVCONF_FORCE_IGMP_VERSION: ::std::os::raw::c_uint = 17;
+pub const IPV4_DEVCONF_ARP_ANNOUNCE: ::std::os::raw::c_uint = 18;
+pub const IPV4_DEVCONF_ARP_IGNORE: ::std::os::raw::c_uint = 19;
+pub const IPV4_DEVCONF_PROMOTE_SECONDARIES: ::std::os::raw::c_uint = 20;
+pub const IPV4_DEVCONF_ARP_ACCEPT: ::std::os::raw::c_uint = 21;
+pub const IPV4_DEVCONF_ARP_NOTIFY: ::std::os::raw::c_uint = 22;
+pub const IPV4_DEVCONF_ACCEPT_LOCAL: ::std::os::raw::c_uint = 23;
+pub const IPV4_DEVCONF_SRC_VMARK: ::std::os::raw::c_uint = 24;
+pub const IPV4_DEVCONF_PROXY_ARP_PVLAN: ::std::os::raw::c_uint = 25;
+pub const IPV4_DEVCONF_ROUTE_LOCALNET: ::std::os::raw::c_uint = 26;
+pub const IPV4_DEVCONF_IGMPV2_UNSOLICITED_REPORT_INTERVAL: ::std::os::raw::c_uint = 27;
+pub const IPV4_DEVCONF_IGMPV3_UNSOLICITED_REPORT_INTERVAL: ::std::os::raw::c_uint = 28;
+pub const IPV4_DEVCONF_IGNORE_ROUTES_WITH_LINKDOWN: ::std::os::raw::c_uint = 29;
+pub const IPV4_DEVCONF_DROP_UNICAST_IN_L2_MULTICAST: ::std::os::raw::c_uint = 30;
+pub const IPV4_DEVCONF_DROP_GRATUITOUS_ARP: ::std::os::raw::c_uint = 31;
+pub const IPV4_DEVCONF_BC_FORWARDING: ::std::os::raw::c_uint = 32;
+pub const __IPV4_DEVCONF_MAX: ::std::os::raw::c_uint = 33;
+pub type _bindgen_ty_5 = ::std::os::raw::c_uint;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct in6_addr {
+    pub in6_u: in6_addr__bindgen_ty_1,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union in6_addr__bindgen_ty_1 {
+    pub u6_addr8: [__u8; 16usize],
+    pub u6_addr16: [__be16; 8usize],
+    pub u6_addr32: [__be32; 4usize],
+}
+#[test]
+fn bindgen_test_layout_in6_addr__bindgen_ty_1() {
+    assert_eq!(
+        ::std::mem::size_of::<in6_addr__bindgen_ty_1>(),
+        16usize,
+        concat!("Size of: ", stringify!(in6_addr__bindgen_ty_1))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<in6_addr__bindgen_ty_1>(),
+        4usize,
+        concat!("Alignment of ", stringify!(in6_addr__bindgen_ty_1))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<in6_addr__bindgen_ty_1>())).u6_addr8 as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(in6_addr__bindgen_ty_1),
+            "::",
+            stringify!(u6_addr8)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<in6_addr__bindgen_ty_1>())).u6_addr16 as *const _ as usize
+        },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(in6_addr__bindgen_ty_1),
+            "::",
+            stringify!(u6_addr16)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<in6_addr__bindgen_ty_1>())).u6_addr32 as *const _ as usize
+        },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(in6_addr__bindgen_ty_1),
+            "::",
+            stringify!(u6_addr32)
+        )
+    );
+}
+impl Default for in6_addr__bindgen_ty_1 {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[test]
+fn bindgen_test_layout_in6_addr() {
+    assert_eq!(
+        ::std::mem::size_of::<in6_addr>(),
+        16usize,
+        concat!("Size of: ", stringify!(in6_addr))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<in6_addr>(),
+        4usize,
+        concat!("Alignment of ", stringify!(in6_addr))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<in6_addr>())).in6_u as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(in6_addr),
+            "::",
+            stringify!(in6_u)
+        )
+    );
+}
+impl Default for in6_addr {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct sockaddr_in6 {
+    pub sin6_family: ::std::os::raw::c_ushort,
+    pub sin6_port: __be16,
+    pub sin6_flowinfo: __be32,
+    pub sin6_addr: in6_addr,
+    pub sin6_scope_id: __u32,
+}
+#[test]
+fn bindgen_test_layout_sockaddr_in6() {
+    assert_eq!(
+        ::std::mem::size_of::<sockaddr_in6>(),
+        28usize,
+        concat!("Size of: ", stringify!(sockaddr_in6))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<sockaddr_in6>(),
+        4usize,
+        concat!("Alignment of ", stringify!(sockaddr_in6))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<sockaddr_in6>())).sin6_family as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sockaddr_in6),
+            "::",
+            stringify!(sin6_family)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<sockaddr_in6>())).sin6_port as *const _ as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sockaddr_in6),
+            "::",
+            stringify!(sin6_port)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<sockaddr_in6>())).sin6_flowinfo as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sockaddr_in6),
+            "::",
+            stringify!(sin6_flowinfo)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<sockaddr_in6>())).sin6_addr as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sockaddr_in6),
+            "::",
+            stringify!(sin6_addr)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<sockaddr_in6>())).sin6_scope_id as *const _ as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sockaddr_in6),
+            "::",
+            stringify!(sin6_scope_id)
+        )
+    );
+}
+impl Default for sockaddr_in6 {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct ipv6_mreq {
+    pub ipv6mr_multiaddr: in6_addr,
+    pub ipv6mr_ifindex: ::std::os::raw::c_int,
+}
+#[test]
+fn bindgen_test_layout_ipv6_mreq() {
+    assert_eq!(
+        ::std::mem::size_of::<ipv6_mreq>(),
+        20usize,
+        concat!("Size of: ", stringify!(ipv6_mreq))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ipv6_mreq>(),
+        4usize,
+        concat!("Alignment of ", stringify!(ipv6_mreq))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ipv6_mreq>())).ipv6mr_multiaddr as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ipv6_mreq),
+            "::",
+            stringify!(ipv6mr_multiaddr)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ipv6_mreq>())).ipv6mr_ifindex as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ipv6_mreq),
+            "::",
+            stringify!(ipv6mr_ifindex)
+        )
+    );
+}
+impl Default for ipv6_mreq {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct in6_flowlabel_req {
+    pub flr_dst: in6_addr,
+    pub flr_label: __be32,
+    pub flr_action: __u8,
+    pub flr_share: __u8,
+    pub flr_flags: __u16,
+    pub flr_expires: __u16,
+    pub flr_linger: __u16,
+    pub __flr_pad: __u32,
+}
+#[test]
+fn bindgen_test_layout_in6_flowlabel_req() {
+    assert_eq!(
+        ::std::mem::size_of::<in6_flowlabel_req>(),
+        32usize,
+        concat!("Size of: ", stringify!(in6_flowlabel_req))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<in6_flowlabel_req>(),
+        4usize,
+        concat!("Alignment of ", stringify!(in6_flowlabel_req))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<in6_flowlabel_req>())).flr_dst as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(in6_flowlabel_req),
+            "::",
+            stringify!(flr_dst)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<in6_flowlabel_req>())).flr_label as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(in6_flowlabel_req),
+            "::",
+            stringify!(flr_label)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<in6_flowlabel_req>())).flr_action as *const _ as usize },
+        20usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(in6_flowlabel_req),
+            "::",
+            stringify!(flr_action)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<in6_flowlabel_req>())).flr_share as *const _ as usize },
+        21usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(in6_flowlabel_req),
+            "::",
+            stringify!(flr_share)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<in6_flowlabel_req>())).flr_flags as *const _ as usize },
+        22usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(in6_flowlabel_req),
+            "::",
+            stringify!(flr_flags)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<in6_flowlabel_req>())).flr_expires as *const _ as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(in6_flowlabel_req),
+            "::",
+            stringify!(flr_expires)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<in6_flowlabel_req>())).flr_linger as *const _ as usize },
+        26usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(in6_flowlabel_req),
+            "::",
+            stringify!(flr_linger)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<in6_flowlabel_req>())).__flr_pad as *const _ as usize },
+        28usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(in6_flowlabel_req),
+            "::",
+            stringify!(__flr_pad)
+        )
+    );
+}
+impl Default for in6_flowlabel_req {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct in6_pktinfo {
+    pub ipi6_addr: in6_addr,
+    pub ipi6_ifindex: ::std::os::raw::c_int,
+}
+#[test]
+fn bindgen_test_layout_in6_pktinfo() {
+    assert_eq!(
+        ::std::mem::size_of::<in6_pktinfo>(),
+        20usize,
+        concat!("Size of: ", stringify!(in6_pktinfo))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<in6_pktinfo>(),
+        4usize,
+        concat!("Alignment of ", stringify!(in6_pktinfo))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<in6_pktinfo>())).ipi6_addr as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(in6_pktinfo),
+            "::",
+            stringify!(ipi6_addr)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<in6_pktinfo>())).ipi6_ifindex as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(in6_pktinfo),
+            "::",
+            stringify!(ipi6_ifindex)
+        )
+    );
+}
+impl Default for in6_pktinfo {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct ip6_mtuinfo {
+    pub ip6m_addr: sockaddr_in6,
+    pub ip6m_mtu: __u32,
+}
+#[test]
+fn bindgen_test_layout_ip6_mtuinfo() {
+    assert_eq!(
+        ::std::mem::size_of::<ip6_mtuinfo>(),
+        32usize,
+        concat!("Size of: ", stringify!(ip6_mtuinfo))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ip6_mtuinfo>(),
+        4usize,
+        concat!("Alignment of ", stringify!(ip6_mtuinfo))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip6_mtuinfo>())).ip6m_addr as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip6_mtuinfo),
+            "::",
+            stringify!(ip6m_addr)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip6_mtuinfo>())).ip6m_mtu as *const _ as usize },
+        28usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip6_mtuinfo),
+            "::",
+            stringify!(ip6m_mtu)
+        )
+    );
+}
+impl Default for ip6_mtuinfo {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct in6_ifreq {
+    pub ifr6_addr: in6_addr,
+    pub ifr6_prefixlen: __u32,
+    pub ifr6_ifindex: ::std::os::raw::c_int,
+}
+#[test]
+fn bindgen_test_layout_in6_ifreq() {
+    assert_eq!(
+        ::std::mem::size_of::<in6_ifreq>(),
+        24usize,
+        concat!("Size of: ", stringify!(in6_ifreq))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<in6_ifreq>(),
+        4usize,
+        concat!("Alignment of ", stringify!(in6_ifreq))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<in6_ifreq>())).ifr6_addr as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(in6_ifreq),
+            "::",
+            stringify!(ifr6_addr)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<in6_ifreq>())).ifr6_prefixlen as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(in6_ifreq),
+            "::",
+            stringify!(ifr6_prefixlen)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<in6_ifreq>())).ifr6_ifindex as *const _ as usize },
+        20usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(in6_ifreq),
+            "::",
+            stringify!(ifr6_ifindex)
+        )
+    );
+}
+impl Default for in6_ifreq {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct ipv6_rt_hdr {
+    pub nexthdr: __u8,
+    pub hdrlen: __u8,
+    pub type_: __u8,
+    pub segments_left: __u8,
+}
+#[test]
+fn bindgen_test_layout_ipv6_rt_hdr() {
+    assert_eq!(
+        ::std::mem::size_of::<ipv6_rt_hdr>(),
+        4usize,
+        concat!("Size of: ", stringify!(ipv6_rt_hdr))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ipv6_rt_hdr>(),
+        1usize,
+        concat!("Alignment of ", stringify!(ipv6_rt_hdr))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ipv6_rt_hdr>())).nexthdr as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ipv6_rt_hdr),
+            "::",
+            stringify!(nexthdr)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ipv6_rt_hdr>())).hdrlen as *const _ as usize },
+        1usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ipv6_rt_hdr),
+            "::",
+            stringify!(hdrlen)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ipv6_rt_hdr>())).type_ as *const _ as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ipv6_rt_hdr),
+            "::",
+            stringify!(type_)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ipv6_rt_hdr>())).segments_left as *const _ as usize },
+        3usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ipv6_rt_hdr),
+            "::",
+            stringify!(segments_left)
+        )
+    );
+}
+#[repr(C, packed)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct ipv6_opt_hdr {
+    pub nexthdr: __u8,
+    pub hdrlen: __u8,
+}
+#[test]
+fn bindgen_test_layout_ipv6_opt_hdr() {
+    assert_eq!(
+        ::std::mem::size_of::<ipv6_opt_hdr>(),
+        2usize,
+        concat!("Size of: ", stringify!(ipv6_opt_hdr))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ipv6_opt_hdr>(),
+        1usize,
+        concat!("Alignment of ", stringify!(ipv6_opt_hdr))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ipv6_opt_hdr>())).nexthdr as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ipv6_opt_hdr),
+            "::",
+            stringify!(nexthdr)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ipv6_opt_hdr>())).hdrlen as *const _ as usize },
+        1usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ipv6_opt_hdr),
+            "::",
+            stringify!(hdrlen)
+        )
+    );
+}
+#[repr(C)]
+pub struct rt0_hdr {
+    pub rt_hdr: ipv6_rt_hdr,
+    pub reserved: __u32,
+    pub addr: __IncompleteArrayField<in6_addr>,
+}
+#[test]
+fn bindgen_test_layout_rt0_hdr() {
+    assert_eq!(
+        ::std::mem::size_of::<rt0_hdr>(),
+        8usize,
+        concat!("Size of: ", stringify!(rt0_hdr))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<rt0_hdr>(),
+        4usize,
+        concat!("Alignment of ", stringify!(rt0_hdr))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<rt0_hdr>())).rt_hdr as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(rt0_hdr),
+            "::",
+            stringify!(rt_hdr)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<rt0_hdr>())).reserved as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(rt0_hdr),
+            "::",
+            stringify!(reserved)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<rt0_hdr>())).addr as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(rt0_hdr),
+            "::",
+            stringify!(addr)
+        )
+    );
+}
+impl Default for rt0_hdr {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct rt2_hdr {
+    pub rt_hdr: ipv6_rt_hdr,
+    pub reserved: __u32,
+    pub addr: in6_addr,
+}
+#[test]
+fn bindgen_test_layout_rt2_hdr() {
+    assert_eq!(
+        ::std::mem::size_of::<rt2_hdr>(),
+        24usize,
+        concat!("Size of: ", stringify!(rt2_hdr))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<rt2_hdr>(),
+        4usize,
+        concat!("Alignment of ", stringify!(rt2_hdr))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<rt2_hdr>())).rt_hdr as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(rt2_hdr),
+            "::",
+            stringify!(rt_hdr)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<rt2_hdr>())).reserved as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(rt2_hdr),
+            "::",
+            stringify!(reserved)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<rt2_hdr>())).addr as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(rt2_hdr),
+            "::",
+            stringify!(addr)
+        )
+    );
+}
+impl Default for rt2_hdr {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[repr(C, packed)]
+#[derive(Copy, Clone)]
+pub struct ipv6_destopt_hao {
+    pub type_: __u8,
+    pub length: __u8,
+    pub addr: in6_addr,
+}
+#[test]
+fn bindgen_test_layout_ipv6_destopt_hao() {
+    assert_eq!(
+        ::std::mem::size_of::<ipv6_destopt_hao>(),
+        18usize,
+        concat!("Size of: ", stringify!(ipv6_destopt_hao))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ipv6_destopt_hao>(),
+        1usize,
+        concat!("Alignment of ", stringify!(ipv6_destopt_hao))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ipv6_destopt_hao>())).type_ as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ipv6_destopt_hao),
+            "::",
+            stringify!(type_)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ipv6_destopt_hao>())).length as *const _ as usize },
+        1usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ipv6_destopt_hao),
+            "::",
+            stringify!(length)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ipv6_destopt_hao>())).addr as *const _ as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ipv6_destopt_hao),
+            "::",
+            stringify!(addr)
+        )
+    );
+}
+impl Default for ipv6_destopt_hao {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct ipv6hdr {
+    pub _bitfield_align_1: [u8; 0],
+    pub _bitfield_1: __BindgenBitfieldUnit<[u8; 1usize]>,
+    pub flow_lbl: [__u8; 3usize],
+    pub payload_len: __be16,
+    pub nexthdr: __u8,
+    pub hop_limit: __u8,
+    pub saddr: in6_addr,
+    pub daddr: in6_addr,
+}
+#[test]
+fn bindgen_test_layout_ipv6hdr() {
+    assert_eq!(
+        ::std::mem::size_of::<ipv6hdr>(),
+        40usize,
+        concat!("Size of: ", stringify!(ipv6hdr))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ipv6hdr>(),
+        4usize,
+        concat!("Alignment of ", stringify!(ipv6hdr))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ipv6hdr>())).flow_lbl as *const _ as usize },
+        1usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ipv6hdr),
+            "::",
+            stringify!(flow_lbl)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ipv6hdr>())).payload_len as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ipv6hdr),
+            "::",
+            stringify!(payload_len)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ipv6hdr>())).nexthdr as *const _ as usize },
+        6usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ipv6hdr),
+            "::",
+            stringify!(nexthdr)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ipv6hdr>())).hop_limit as *const _ as usize },
+        7usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ipv6hdr),
+            "::",
+            stringify!(hop_limit)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ipv6hdr>())).saddr as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ipv6hdr),
+            "::",
+            stringify!(saddr)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ipv6hdr>())).daddr as *const _ as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ipv6hdr),
+            "::",
+            stringify!(daddr)
+        )
+    );
+}
+impl Default for ipv6hdr {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+impl ipv6hdr {
+    #[inline]
+    pub fn priority(&self) -> __u8 {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 4u8) as u8) }
+    }
+    #[inline]
+    pub fn set_priority(&mut self, val: __u8) {
+        unsafe {
+            let val: u8 = ::std::mem::transmute(val);
+            self._bitfield_1.set(0usize, 4u8, val as u64)
+        }
+    }
+    #[inline]
+    pub fn version(&self) -> __u8 {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(4usize, 4u8) as u8) }
+    }
+    #[inline]
+    pub fn set_version(&mut self, val: __u8) {
+        unsafe {
+            let val: u8 = ::std::mem::transmute(val);
+            self._bitfield_1.set(4usize, 4u8, val as u64)
+        }
+    }
+    #[inline]
+    pub fn new_bitfield_1(priority: __u8, version: __u8) -> __BindgenBitfieldUnit<[u8; 1usize]> {
+        let mut __bindgen_bitfield_unit: __BindgenBitfieldUnit<[u8; 1usize]> = Default::default();
+        __bindgen_bitfield_unit.set(0usize, 4u8, {
+            let priority: u8 = unsafe { ::std::mem::transmute(priority) };
+            priority as u64
+        });
+        __bindgen_bitfield_unit.set(4usize, 4u8, {
+            let version: u8 = unsafe { ::std::mem::transmute(version) };
+            version as u64
+        });
+        __bindgen_bitfield_unit
+    }
+}
+pub const DEVCONF_FORWARDING: ::std::os::raw::c_uint = 0;
+pub const DEVCONF_HOPLIMIT: ::std::os::raw::c_uint = 1;
+pub const DEVCONF_MTU6: ::std::os::raw::c_uint = 2;
+pub const DEVCONF_ACCEPT_RA: ::std::os::raw::c_uint = 3;
+pub const DEVCONF_ACCEPT_REDIRECTS: ::std::os::raw::c_uint = 4;
+pub const DEVCONF_AUTOCONF: ::std::os::raw::c_uint = 5;
+pub const DEVCONF_DAD_TRANSMITS: ::std::os::raw::c_uint = 6;
+pub const DEVCONF_RTR_SOLICITS: ::std::os::raw::c_uint = 7;
+pub const DEVCONF_RTR_SOLICIT_INTERVAL: ::std::os::raw::c_uint = 8;
+pub const DEVCONF_RTR_SOLICIT_DELAY: ::std::os::raw::c_uint = 9;
+pub const DEVCONF_USE_TEMPADDR: ::std::os::raw::c_uint = 10;
+pub const DEVCONF_TEMP_VALID_LFT: ::std::os::raw::c_uint = 11;
+pub const DEVCONF_TEMP_PREFERED_LFT: ::std::os::raw::c_uint = 12;
+pub const DEVCONF_REGEN_MAX_RETRY: ::std::os::raw::c_uint = 13;
+pub const DEVCONF_MAX_DESYNC_FACTOR: ::std::os::raw::c_uint = 14;
+pub const DEVCONF_MAX_ADDRESSES: ::std::os::raw::c_uint = 15;
+pub const DEVCONF_FORCE_MLD_VERSION: ::std::os::raw::c_uint = 16;
+pub const DEVCONF_ACCEPT_RA_DEFRTR: ::std::os::raw::c_uint = 17;
+pub const DEVCONF_ACCEPT_RA_PINFO: ::std::os::raw::c_uint = 18;
+pub const DEVCONF_ACCEPT_RA_RTR_PREF: ::std::os::raw::c_uint = 19;
+pub const DEVCONF_RTR_PROBE_INTERVAL: ::std::os::raw::c_uint = 20;
+pub const DEVCONF_ACCEPT_RA_RT_INFO_MAX_PLEN: ::std::os::raw::c_uint = 21;
+pub const DEVCONF_PROXY_NDP: ::std::os::raw::c_uint = 22;
+pub const DEVCONF_OPTIMISTIC_DAD: ::std::os::raw::c_uint = 23;
+pub const DEVCONF_ACCEPT_SOURCE_ROUTE: ::std::os::raw::c_uint = 24;
+pub const DEVCONF_MC_FORWARDING: ::std::os::raw::c_uint = 25;
+pub const DEVCONF_DISABLE_IPV6: ::std::os::raw::c_uint = 26;
+pub const DEVCONF_ACCEPT_DAD: ::std::os::raw::c_uint = 27;
+pub const DEVCONF_FORCE_TLLAO: ::std::os::raw::c_uint = 28;
+pub const DEVCONF_NDISC_NOTIFY: ::std::os::raw::c_uint = 29;
+pub const DEVCONF_MLDV1_UNSOLICITED_REPORT_INTERVAL: ::std::os::raw::c_uint = 30;
+pub const DEVCONF_MLDV2_UNSOLICITED_REPORT_INTERVAL: ::std::os::raw::c_uint = 31;
+pub const DEVCONF_SUPPRESS_FRAG_NDISC: ::std::os::raw::c_uint = 32;
+pub const DEVCONF_ACCEPT_RA_FROM_LOCAL: ::std::os::raw::c_uint = 33;
+pub const DEVCONF_USE_OPTIMISTIC: ::std::os::raw::c_uint = 34;
+pub const DEVCONF_ACCEPT_RA_MTU: ::std::os::raw::c_uint = 35;
+pub const DEVCONF_STABLE_SECRET: ::std::os::raw::c_uint = 36;
+pub const DEVCONF_USE_OIF_ADDRS_ONLY: ::std::os::raw::c_uint = 37;
+pub const DEVCONF_ACCEPT_RA_MIN_HOP_LIMIT: ::std::os::raw::c_uint = 38;
+pub const DEVCONF_IGNORE_ROUTES_WITH_LINKDOWN: ::std::os::raw::c_uint = 39;
+pub const DEVCONF_DROP_UNICAST_IN_L2_MULTICAST: ::std::os::raw::c_uint = 40;
+pub const DEVCONF_DROP_UNSOLICITED_NA: ::std::os::raw::c_uint = 41;
+pub const DEVCONF_KEEP_ADDR_ON_DOWN: ::std::os::raw::c_uint = 42;
+pub const DEVCONF_RTR_SOLICIT_MAX_INTERVAL: ::std::os::raw::c_uint = 43;
+pub const DEVCONF_SEG6_ENABLED: ::std::os::raw::c_uint = 44;
+pub const DEVCONF_SEG6_REQUIRE_HMAC: ::std::os::raw::c_uint = 45;
+pub const DEVCONF_ENHANCED_DAD: ::std::os::raw::c_uint = 46;
+pub const DEVCONF_ADDR_GEN_MODE: ::std::os::raw::c_uint = 47;
+pub const DEVCONF_DISABLE_POLICY: ::std::os::raw::c_uint = 48;
+pub const DEVCONF_ACCEPT_RA_RT_INFO_MIN_PLEN: ::std::os::raw::c_uint = 49;
+pub const DEVCONF_NDISC_TCLASS: ::std::os::raw::c_uint = 50;
+pub const DEVCONF_MAX: ::std::os::raw::c_uint = 51;
+pub type _bindgen_ty_6 = ::std::os::raw::c_uint;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct icmphdr {
+    pub type_: __u8,
+    pub code: __u8,
+    pub checksum: __sum16,
+    pub un: icmphdr__bindgen_ty_1,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union icmphdr__bindgen_ty_1 {
+    pub echo: icmphdr__bindgen_ty_1__bindgen_ty_1,
+    pub gateway: __be32,
+    pub frag: icmphdr__bindgen_ty_1__bindgen_ty_2,
+    pub reserved: [__u8; 4usize],
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct icmphdr__bindgen_ty_1__bindgen_ty_1 {
+    pub id: __be16,
+    pub sequence: __be16,
+}
+#[test]
+fn bindgen_test_layout_icmphdr__bindgen_ty_1__bindgen_ty_1() {
+    assert_eq!(
+        ::std::mem::size_of::<icmphdr__bindgen_ty_1__bindgen_ty_1>(),
+        4usize,
+        concat!("Size of: ", stringify!(icmphdr__bindgen_ty_1__bindgen_ty_1))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<icmphdr__bindgen_ty_1__bindgen_ty_1>(),
+        2usize,
+        concat!(
+            "Alignment of ",
+            stringify!(icmphdr__bindgen_ty_1__bindgen_ty_1)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<icmphdr__bindgen_ty_1__bindgen_ty_1>())).id as *const _ as usize
+        },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmphdr__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(id)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<icmphdr__bindgen_ty_1__bindgen_ty_1>())).sequence as *const _
+                as usize
+        },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmphdr__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(sequence)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct icmphdr__bindgen_ty_1__bindgen_ty_2 {
+    pub __unused: __be16,
+    pub mtu: __be16,
+}
+#[test]
+fn bindgen_test_layout_icmphdr__bindgen_ty_1__bindgen_ty_2() {
+    assert_eq!(
+        ::std::mem::size_of::<icmphdr__bindgen_ty_1__bindgen_ty_2>(),
+        4usize,
+        concat!("Size of: ", stringify!(icmphdr__bindgen_ty_1__bindgen_ty_2))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<icmphdr__bindgen_ty_1__bindgen_ty_2>(),
+        2usize,
+        concat!(
+            "Alignment of ",
+            stringify!(icmphdr__bindgen_ty_1__bindgen_ty_2)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<icmphdr__bindgen_ty_1__bindgen_ty_2>())).__unused as *const _
+                as usize
+        },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmphdr__bindgen_ty_1__bindgen_ty_2),
+            "::",
+            stringify!(__unused)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<icmphdr__bindgen_ty_1__bindgen_ty_2>())).mtu as *const _ as usize
+        },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmphdr__bindgen_ty_1__bindgen_ty_2),
+            "::",
+            stringify!(mtu)
+        )
+    );
+}
+#[test]
+fn bindgen_test_layout_icmphdr__bindgen_ty_1() {
+    assert_eq!(
+        ::std::mem::size_of::<icmphdr__bindgen_ty_1>(),
+        4usize,
+        concat!("Size of: ", stringify!(icmphdr__bindgen_ty_1))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<icmphdr__bindgen_ty_1>(),
+        4usize,
+        concat!("Alignment of ", stringify!(icmphdr__bindgen_ty_1))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<icmphdr__bindgen_ty_1>())).echo as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmphdr__bindgen_ty_1),
+            "::",
+            stringify!(echo)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<icmphdr__bindgen_ty_1>())).gateway as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmphdr__bindgen_ty_1),
+            "::",
+            stringify!(gateway)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<icmphdr__bindgen_ty_1>())).frag as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmphdr__bindgen_ty_1),
+            "::",
+            stringify!(frag)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<icmphdr__bindgen_ty_1>())).reserved as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmphdr__bindgen_ty_1),
+            "::",
+            stringify!(reserved)
+        )
+    );
+}
+impl Default for icmphdr__bindgen_ty_1 {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[test]
+fn bindgen_test_layout_icmphdr() {
+    assert_eq!(
+        ::std::mem::size_of::<icmphdr>(),
+        8usize,
+        concat!("Size of: ", stringify!(icmphdr))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<icmphdr>(),
+        4usize,
+        concat!("Alignment of ", stringify!(icmphdr))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<icmphdr>())).type_ as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmphdr),
+            "::",
+            stringify!(type_)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<icmphdr>())).code as *const _ as usize },
+        1usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmphdr),
+            "::",
+            stringify!(code)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<icmphdr>())).checksum as *const _ as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmphdr),
+            "::",
+            stringify!(checksum)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<icmphdr>())).un as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmphdr),
+            "::",
+            stringify!(un)
+        )
+    );
+}
+impl Default for icmphdr {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct icmp_filter {
+    pub data: __u32,
+}
+#[test]
+fn bindgen_test_layout_icmp_filter() {
+    assert_eq!(
+        ::std::mem::size_of::<icmp_filter>(),
+        4usize,
+        concat!("Size of: ", stringify!(icmp_filter))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<icmp_filter>(),
+        4usize,
+        concat!("Alignment of ", stringify!(icmp_filter))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<icmp_filter>())).data as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp_filter),
+            "::",
+            stringify!(data)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct icmp6hdr {
+    pub icmp6_type: __u8,
+    pub icmp6_code: __u8,
+    pub icmp6_cksum: __sum16,
+    pub icmp6_dataun: icmp6hdr__bindgen_ty_1,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union icmp6hdr__bindgen_ty_1 {
+    pub un_data32: [__be32; 1usize],
+    pub un_data16: [__be16; 2usize],
+    pub un_data8: [__u8; 4usize],
+    pub u_echo: icmp6hdr__bindgen_ty_1_icmpv6_echo,
+    pub u_nd_advt: icmp6hdr__bindgen_ty_1_icmpv6_nd_advt,
+    pub u_nd_ra: icmp6hdr__bindgen_ty_1_icmpv6_nd_ra,
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct icmp6hdr__bindgen_ty_1_icmpv6_echo {
+    pub identifier: __be16,
+    pub sequence: __be16,
+}
+#[test]
+fn bindgen_test_layout_icmp6hdr__bindgen_ty_1_icmpv6_echo() {
+    assert_eq!(
+        ::std::mem::size_of::<icmp6hdr__bindgen_ty_1_icmpv6_echo>(),
+        4usize,
+        concat!("Size of: ", stringify!(icmp6hdr__bindgen_ty_1_icmpv6_echo))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<icmp6hdr__bindgen_ty_1_icmpv6_echo>(),
+        2usize,
+        concat!(
+            "Alignment of ",
+            stringify!(icmp6hdr__bindgen_ty_1_icmpv6_echo)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<icmp6hdr__bindgen_ty_1_icmpv6_echo>())).identifier as *const _
+                as usize
+        },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp6hdr__bindgen_ty_1_icmpv6_echo),
+            "::",
+            stringify!(identifier)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<icmp6hdr__bindgen_ty_1_icmpv6_echo>())).sequence as *const _
+                as usize
+        },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp6hdr__bindgen_ty_1_icmpv6_echo),
+            "::",
+            stringify!(sequence)
+        )
+    );
+}
+#[repr(C)]
+#[repr(align(4))]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct icmp6hdr__bindgen_ty_1_icmpv6_nd_advt {
+    pub _bitfield_align_1: [u32; 0],
+    pub _bitfield_1: __BindgenBitfieldUnit<[u8; 4usize]>,
+}
+#[test]
+fn bindgen_test_layout_icmp6hdr__bindgen_ty_1_icmpv6_nd_advt() {
+    assert_eq!(
+        ::std::mem::size_of::<icmp6hdr__bindgen_ty_1_icmpv6_nd_advt>(),
+        4usize,
+        concat!(
+            "Size of: ",
+            stringify!(icmp6hdr__bindgen_ty_1_icmpv6_nd_advt)
+        )
+    );
+    assert_eq!(
+        ::std::mem::align_of::<icmp6hdr__bindgen_ty_1_icmpv6_nd_advt>(),
+        4usize,
+        concat!(
+            "Alignment of ",
+            stringify!(icmp6hdr__bindgen_ty_1_icmpv6_nd_advt)
+        )
+    );
+}
+impl icmp6hdr__bindgen_ty_1_icmpv6_nd_advt {
+    #[inline]
+    pub fn reserved(&self) -> __u32 {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 5u8) as u32) }
+    }
+    #[inline]
+    pub fn set_reserved(&mut self, val: __u32) {
+        unsafe {
+            let val: u32 = ::std::mem::transmute(val);
+            self._bitfield_1.set(0usize, 5u8, val as u64)
+        }
+    }
+    #[inline]
+    pub fn override_(&self) -> __u32 {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(5usize, 1u8) as u32) }
+    }
+    #[inline]
+    pub fn set_override(&mut self, val: __u32) {
+        unsafe {
+            let val: u32 = ::std::mem::transmute(val);
+            self._bitfield_1.set(5usize, 1u8, val as u64)
+        }
+    }
+    #[inline]
+    pub fn solicited(&self) -> __u32 {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(6usize, 1u8) as u32) }
+    }
+    #[inline]
+    pub fn set_solicited(&mut self, val: __u32) {
+        unsafe {
+            let val: u32 = ::std::mem::transmute(val);
+            self._bitfield_1.set(6usize, 1u8, val as u64)
+        }
+    }
+    #[inline]
+    pub fn router(&self) -> __u32 {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(7usize, 1u8) as u32) }
+    }
+    #[inline]
+    pub fn set_router(&mut self, val: __u32) {
+        unsafe {
+            let val: u32 = ::std::mem::transmute(val);
+            self._bitfield_1.set(7usize, 1u8, val as u64)
+        }
+    }
+    #[inline]
+    pub fn reserved2(&self) -> __u32 {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(8usize, 24u8) as u32) }
+    }
+    #[inline]
+    pub fn set_reserved2(&mut self, val: __u32) {
+        unsafe {
+            let val: u32 = ::std::mem::transmute(val);
+            self._bitfield_1.set(8usize, 24u8, val as u64)
+        }
+    }
+    #[inline]
+    pub fn new_bitfield_1(
+        reserved: __u32,
+        override_: __u32,
+        solicited: __u32,
+        router: __u32,
+        reserved2: __u32,
+    ) -> __BindgenBitfieldUnit<[u8; 4usize]> {
+        let mut __bindgen_bitfield_unit: __BindgenBitfieldUnit<[u8; 4usize]> = Default::default();
+        __bindgen_bitfield_unit.set(0usize, 5u8, {
+            let reserved: u32 = unsafe { ::std::mem::transmute(reserved) };
+            reserved as u64
+        });
+        __bindgen_bitfield_unit.set(5usize, 1u8, {
+            let override_: u32 = unsafe { ::std::mem::transmute(override_) };
+            override_ as u64
+        });
+        __bindgen_bitfield_unit.set(6usize, 1u8, {
+            let solicited: u32 = unsafe { ::std::mem::transmute(solicited) };
+            solicited as u64
+        });
+        __bindgen_bitfield_unit.set(7usize, 1u8, {
+            let router: u32 = unsafe { ::std::mem::transmute(router) };
+            router as u64
+        });
+        __bindgen_bitfield_unit.set(8usize, 24u8, {
+            let reserved2: u32 = unsafe { ::std::mem::transmute(reserved2) };
+            reserved2 as u64
+        });
+        __bindgen_bitfield_unit
+    }
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct icmp6hdr__bindgen_ty_1_icmpv6_nd_ra {
+    pub hop_limit: __u8,
+    pub _bitfield_align_1: [u8; 0],
+    pub _bitfield_1: __BindgenBitfieldUnit<[u8; 1usize]>,
+    pub rt_lifetime: __be16,
+}
+#[test]
+fn bindgen_test_layout_icmp6hdr__bindgen_ty_1_icmpv6_nd_ra() {
+    assert_eq!(
+        ::std::mem::size_of::<icmp6hdr__bindgen_ty_1_icmpv6_nd_ra>(),
+        4usize,
+        concat!("Size of: ", stringify!(icmp6hdr__bindgen_ty_1_icmpv6_nd_ra))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<icmp6hdr__bindgen_ty_1_icmpv6_nd_ra>(),
+        2usize,
+        concat!(
+            "Alignment of ",
+            stringify!(icmp6hdr__bindgen_ty_1_icmpv6_nd_ra)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<icmp6hdr__bindgen_ty_1_icmpv6_nd_ra>())).hop_limit as *const _
+                as usize
+        },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp6hdr__bindgen_ty_1_icmpv6_nd_ra),
+            "::",
+            stringify!(hop_limit)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<icmp6hdr__bindgen_ty_1_icmpv6_nd_ra>())).rt_lifetime as *const _
+                as usize
+        },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp6hdr__bindgen_ty_1_icmpv6_nd_ra),
+            "::",
+            stringify!(rt_lifetime)
+        )
+    );
+}
+impl icmp6hdr__bindgen_ty_1_icmpv6_nd_ra {
+    #[inline]
+    pub fn reserved(&self) -> __u8 {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 3u8) as u8) }
+    }
+    #[inline]
+    pub fn set_reserved(&mut self, val: __u8) {
+        unsafe {
+            let val: u8 = ::std::mem::transmute(val);
+            self._bitfield_1.set(0usize, 3u8, val as u64)
+        }
+    }
+    #[inline]
+    pub fn router_pref(&self) -> __u8 {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(3usize, 2u8) as u8) }
+    }
+    #[inline]
+    pub fn set_router_pref(&mut self, val: __u8) {
+        unsafe {
+            let val: u8 = ::std::mem::transmute(val);
+            self._bitfield_1.set(3usize, 2u8, val as u64)
+        }
+    }
+    #[inline]
+    pub fn home_agent(&self) -> __u8 {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(5usize, 1u8) as u8) }
+    }
+    #[inline]
+    pub fn set_home_agent(&mut self, val: __u8) {
+        unsafe {
+            let val: u8 = ::std::mem::transmute(val);
+            self._bitfield_1.set(5usize, 1u8, val as u64)
+        }
+    }
+    #[inline]
+    pub fn other(&self) -> __u8 {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(6usize, 1u8) as u8) }
+    }
+    #[inline]
+    pub fn set_other(&mut self, val: __u8) {
+        unsafe {
+            let val: u8 = ::std::mem::transmute(val);
+            self._bitfield_1.set(6usize, 1u8, val as u64)
+        }
+    }
+    #[inline]
+    pub fn managed(&self) -> __u8 {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(7usize, 1u8) as u8) }
+    }
+    #[inline]
+    pub fn set_managed(&mut self, val: __u8) {
+        unsafe {
+            let val: u8 = ::std::mem::transmute(val);
+            self._bitfield_1.set(7usize, 1u8, val as u64)
+        }
+    }
+    #[inline]
+    pub fn new_bitfield_1(
+        reserved: __u8,
+        router_pref: __u8,
+        home_agent: __u8,
+        other: __u8,
+        managed: __u8,
+    ) -> __BindgenBitfieldUnit<[u8; 1usize]> {
+        let mut __bindgen_bitfield_unit: __BindgenBitfieldUnit<[u8; 1usize]> = Default::default();
+        __bindgen_bitfield_unit.set(0usize, 3u8, {
+            let reserved: u8 = unsafe { ::std::mem::transmute(reserved) };
+            reserved as u64
+        });
+        __bindgen_bitfield_unit.set(3usize, 2u8, {
+            let router_pref: u8 = unsafe { ::std::mem::transmute(router_pref) };
+            router_pref as u64
+        });
+        __bindgen_bitfield_unit.set(5usize, 1u8, {
+            let home_agent: u8 = unsafe { ::std::mem::transmute(home_agent) };
+            home_agent as u64
+        });
+        __bindgen_bitfield_unit.set(6usize, 1u8, {
+            let other: u8 = unsafe { ::std::mem::transmute(other) };
+            other as u64
+        });
+        __bindgen_bitfield_unit.set(7usize, 1u8, {
+            let managed: u8 = unsafe { ::std::mem::transmute(managed) };
+            managed as u64
+        });
+        __bindgen_bitfield_unit
+    }
+}
+#[test]
+fn bindgen_test_layout_icmp6hdr__bindgen_ty_1() {
+    assert_eq!(
+        ::std::mem::size_of::<icmp6hdr__bindgen_ty_1>(),
+        4usize,
+        concat!("Size of: ", stringify!(icmp6hdr__bindgen_ty_1))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<icmp6hdr__bindgen_ty_1>(),
+        4usize,
+        concat!("Alignment of ", stringify!(icmp6hdr__bindgen_ty_1))
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<icmp6hdr__bindgen_ty_1>())).un_data32 as *const _ as usize
+        },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp6hdr__bindgen_ty_1),
+            "::",
+            stringify!(un_data32)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<icmp6hdr__bindgen_ty_1>())).un_data16 as *const _ as usize
+        },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp6hdr__bindgen_ty_1),
+            "::",
+            stringify!(un_data16)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<icmp6hdr__bindgen_ty_1>())).un_data8 as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp6hdr__bindgen_ty_1),
+            "::",
+            stringify!(un_data8)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<icmp6hdr__bindgen_ty_1>())).u_echo as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp6hdr__bindgen_ty_1),
+            "::",
+            stringify!(u_echo)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<icmp6hdr__bindgen_ty_1>())).u_nd_advt as *const _ as usize
+        },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp6hdr__bindgen_ty_1),
+            "::",
+            stringify!(u_nd_advt)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<icmp6hdr__bindgen_ty_1>())).u_nd_ra as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp6hdr__bindgen_ty_1),
+            "::",
+            stringify!(u_nd_ra)
+        )
+    );
+}
+impl Default for icmp6hdr__bindgen_ty_1 {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[test]
+fn bindgen_test_layout_icmp6hdr() {
+    assert_eq!(
+        ::std::mem::size_of::<icmp6hdr>(),
+        8usize,
+        concat!("Size of: ", stringify!(icmp6hdr))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<icmp6hdr>(),
+        4usize,
+        concat!("Alignment of ", stringify!(icmp6hdr))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<icmp6hdr>())).icmp6_type as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp6hdr),
+            "::",
+            stringify!(icmp6_type)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<icmp6hdr>())).icmp6_code as *const _ as usize },
+        1usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp6hdr),
+            "::",
+            stringify!(icmp6_code)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<icmp6hdr>())).icmp6_cksum as *const _ as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp6hdr),
+            "::",
+            stringify!(icmp6_cksum)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<icmp6hdr>())).icmp6_dataun as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp6hdr),
+            "::",
+            stringify!(icmp6_dataun)
+        )
+    );
+}
+impl Default for icmp6hdr {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct icmp6_filter {
+    pub data: [__u32; 8usize],
+}
+#[test]
+fn bindgen_test_layout_icmp6_filter() {
+    assert_eq!(
+        ::std::mem::size_of::<icmp6_filter>(),
+        32usize,
+        concat!("Size of: ", stringify!(icmp6_filter))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<icmp6_filter>(),
+        4usize,
+        concat!("Alignment of ", stringify!(icmp6_filter))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<icmp6_filter>())).data as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmp6_filter),
+            "::",
+            stringify!(data)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct udphdr {
+    pub source: __be16,
+    pub dest: __be16,
+    pub len: __be16,
+    pub check: __sum16,
+}
+#[test]
+fn bindgen_test_layout_udphdr() {
+    assert_eq!(
+        ::std::mem::size_of::<udphdr>(),
+        8usize,
+        concat!("Size of: ", stringify!(udphdr))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<udphdr>(),
+        2usize,
+        concat!("Alignment of ", stringify!(udphdr))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<udphdr>())).source as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(udphdr),
+            "::",
+            stringify!(source)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<udphdr>())).dest as *const _ as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(udphdr),
+            "::",
+            stringify!(dest)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<udphdr>())).len as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(udphdr),
+            "::",
+            stringify!(len)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<udphdr>())).check as *const _ as usize },
+        6usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(udphdr),
+            "::",
+            stringify!(check)
+        )
+    );
+}
+pub type __kernel_sa_family_t = ::std::os::raw::c_ushort;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct __kernel_sockaddr_storage {
+    pub __bindgen_anon_1: __kernel_sockaddr_storage__bindgen_ty_1,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union __kernel_sockaddr_storage__bindgen_ty_1 {
+    pub __bindgen_anon_1: __kernel_sockaddr_storage__bindgen_ty_1__bindgen_ty_1,
+    pub __align: *mut ::std::os::raw::c_void,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct __kernel_sockaddr_storage__bindgen_ty_1__bindgen_ty_1 {
+    pub ss_family: __kernel_sa_family_t,
+    pub __data: [::std::os::raw::c_char; 126usize],
+}
+#[test]
+fn bindgen_test_layout___kernel_sockaddr_storage__bindgen_ty_1__bindgen_ty_1() {
+    assert_eq!(
+        ::std::mem::size_of::<__kernel_sockaddr_storage__bindgen_ty_1__bindgen_ty_1>(),
+        128usize,
+        concat!(
+            "Size of: ",
+            stringify!(__kernel_sockaddr_storage__bindgen_ty_1__bindgen_ty_1)
+        )
+    );
+    assert_eq!(
+        ::std::mem::align_of::<__kernel_sockaddr_storage__bindgen_ty_1__bindgen_ty_1>(),
+        2usize,
+        concat!(
+            "Alignment of ",
+            stringify!(__kernel_sockaddr_storage__bindgen_ty_1__bindgen_ty_1)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<__kernel_sockaddr_storage__bindgen_ty_1__bindgen_ty_1>()))
+                .ss_family as *const _ as usize
+        },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(__kernel_sockaddr_storage__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(ss_family)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<__kernel_sockaddr_storage__bindgen_ty_1__bindgen_ty_1>())).__data
+                as *const _ as usize
+        },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(__kernel_sockaddr_storage__bindgen_ty_1__bindgen_ty_1),
+            "::",
+            stringify!(__data)
+        )
+    );
+}
+impl Default for __kernel_sockaddr_storage__bindgen_ty_1__bindgen_ty_1 {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[test]
+fn bindgen_test_layout___kernel_sockaddr_storage__bindgen_ty_1() {
+    assert_eq!(
+        ::std::mem::size_of::<__kernel_sockaddr_storage__bindgen_ty_1>(),
+        128usize,
+        concat!(
+            "Size of: ",
+            stringify!(__kernel_sockaddr_storage__bindgen_ty_1)
+        )
+    );
+    assert_eq!(
+        ::std::mem::align_of::<__kernel_sockaddr_storage__bindgen_ty_1>(),
+        8usize,
+        concat!(
+            "Alignment of ",
+            stringify!(__kernel_sockaddr_storage__bindgen_ty_1)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<__kernel_sockaddr_storage__bindgen_ty_1>())).__align as *const _
+                as usize
+        },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(__kernel_sockaddr_storage__bindgen_ty_1),
+            "::",
+            stringify!(__align)
+        )
+    );
+}
+impl Default for __kernel_sockaddr_storage__bindgen_ty_1 {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[test]
+fn bindgen_test_layout___kernel_sockaddr_storage() {
+    assert_eq!(
+        ::std::mem::size_of::<__kernel_sockaddr_storage>(),
+        128usize,
+        concat!("Size of: ", stringify!(__kernel_sockaddr_storage))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<__kernel_sockaddr_storage>(),
+        8usize,
+        concat!("Alignment of ", stringify!(__kernel_sockaddr_storage))
+    );
+}
+impl Default for __kernel_sockaddr_storage {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct tcphdr {
+    pub source: __be16,
+    pub dest: __be16,
+    pub seq: __be32,
+    pub ack_seq: __be32,
+    pub _bitfield_align_1: [u8; 0],
+    pub _bitfield_1: __BindgenBitfieldUnit<[u8; 2usize]>,
+    pub window: __be16,
+    pub check: __sum16,
+    pub urg_ptr: __be16,
+}
+#[test]
+fn bindgen_test_layout_tcphdr() {
+    assert_eq!(
+        ::std::mem::size_of::<tcphdr>(),
+        20usize,
+        concat!("Size of: ", stringify!(tcphdr))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<tcphdr>(),
+        4usize,
+        concat!("Alignment of ", stringify!(tcphdr))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcphdr>())).source as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcphdr),
+            "::",
+            stringify!(source)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcphdr>())).dest as *const _ as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcphdr),
+            "::",
+            stringify!(dest)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcphdr>())).seq as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcphdr),
+            "::",
+            stringify!(seq)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcphdr>())).ack_seq as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcphdr),
+            "::",
+            stringify!(ack_seq)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcphdr>())).window as *const _ as usize },
+        14usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcphdr),
+            "::",
+            stringify!(window)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcphdr>())).check as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcphdr),
+            "::",
+            stringify!(check)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcphdr>())).urg_ptr as *const _ as usize },
+        18usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcphdr),
+            "::",
+            stringify!(urg_ptr)
+        )
+    );
+}
+impl tcphdr {
+    #[inline]
+    pub fn res1(&self) -> __u16 {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 4u8) as u16) }
+    }
+    #[inline]
+    pub fn set_res1(&mut self, val: __u16) {
+        unsafe {
+            let val: u16 = ::std::mem::transmute(val);
+            self._bitfield_1.set(0usize, 4u8, val as u64)
+        }
+    }
+    #[inline]
+    pub fn doff(&self) -> __u16 {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(4usize, 4u8) as u16) }
+    }
+    #[inline]
+    pub fn set_doff(&mut self, val: __u16) {
+        unsafe {
+            let val: u16 = ::std::mem::transmute(val);
+            self._bitfield_1.set(4usize, 4u8, val as u64)
+        }
+    }
+    #[inline]
+    pub fn fin(&self) -> __u16 {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(8usize, 1u8) as u16) }
+    }
+    #[inline]
+    pub fn set_fin(&mut self, val: __u16) {
+        unsafe {
+            let val: u16 = ::std::mem::transmute(val);
+            self._bitfield_1.set(8usize, 1u8, val as u64)
+        }
+    }
+    #[inline]
+    pub fn syn(&self) -> __u16 {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(9usize, 1u8) as u16) }
+    }
+    #[inline]
+    pub fn set_syn(&mut self, val: __u16) {
+        unsafe {
+            let val: u16 = ::std::mem::transmute(val);
+            self._bitfield_1.set(9usize, 1u8, val as u64)
+        }
+    }
+    #[inline]
+    pub fn rst(&self) -> __u16 {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(10usize, 1u8) as u16) }
+    }
+    #[inline]
+    pub fn set_rst(&mut self, val: __u16) {
+        unsafe {
+            let val: u16 = ::std::mem::transmute(val);
+            self._bitfield_1.set(10usize, 1u8, val as u64)
+        }
+    }
+    #[inline]
+    pub fn psh(&self) -> __u16 {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(11usize, 1u8) as u16) }
+    }
+    #[inline]
+    pub fn set_psh(&mut self, val: __u16) {
+        unsafe {
+            let val: u16 = ::std::mem::transmute(val);
+            self._bitfield_1.set(11usize, 1u8, val as u64)
+        }
+    }
+    #[inline]
+    pub fn ack(&self) -> __u16 {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(12usize, 1u8) as u16) }
+    }
+    #[inline]
+    pub fn set_ack(&mut self, val: __u16) {
+        unsafe {
+            let val: u16 = ::std::mem::transmute(val);
+            self._bitfield_1.set(12usize, 1u8, val as u64)
+        }
+    }
+    #[inline]
+    pub fn urg(&self) -> __u16 {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(13usize, 1u8) as u16) }
+    }
+    #[inline]
+    pub fn set_urg(&mut self, val: __u16) {
+        unsafe {
+            let val: u16 = ::std::mem::transmute(val);
+            self._bitfield_1.set(13usize, 1u8, val as u64)
+        }
+    }
+    #[inline]
+    pub fn ece(&self) -> __u16 {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(14usize, 1u8) as u16) }
+    }
+    #[inline]
+    pub fn set_ece(&mut self, val: __u16) {
+        unsafe {
+            let val: u16 = ::std::mem::transmute(val);
+            self._bitfield_1.set(14usize, 1u8, val as u64)
+        }
+    }
+    #[inline]
+    pub fn cwr(&self) -> __u16 {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(15usize, 1u8) as u16) }
+    }
+    #[inline]
+    pub fn set_cwr(&mut self, val: __u16) {
+        unsafe {
+            let val: u16 = ::std::mem::transmute(val);
+            self._bitfield_1.set(15usize, 1u8, val as u64)
+        }
+    }
+    #[inline]
+    pub fn new_bitfield_1(
+        res1: __u16,
+        doff: __u16,
+        fin: __u16,
+        syn: __u16,
+        rst: __u16,
+        psh: __u16,
+        ack: __u16,
+        urg: __u16,
+        ece: __u16,
+        cwr: __u16,
+    ) -> __BindgenBitfieldUnit<[u8; 2usize]> {
+        let mut __bindgen_bitfield_unit: __BindgenBitfieldUnit<[u8; 2usize]> = Default::default();
+        __bindgen_bitfield_unit.set(0usize, 4u8, {
+            let res1: u16 = unsafe { ::std::mem::transmute(res1) };
+            res1 as u64
+        });
+        __bindgen_bitfield_unit.set(4usize, 4u8, {
+            let doff: u16 = unsafe { ::std::mem::transmute(doff) };
+            doff as u64
+        });
+        __bindgen_bitfield_unit.set(8usize, 1u8, {
+            let fin: u16 = unsafe { ::std::mem::transmute(fin) };
+            fin as u64
+        });
+        __bindgen_bitfield_unit.set(9usize, 1u8, {
+            let syn: u16 = unsafe { ::std::mem::transmute(syn) };
+            syn as u64
+        });
+        __bindgen_bitfield_unit.set(10usize, 1u8, {
+            let rst: u16 = unsafe { ::std::mem::transmute(rst) };
+            rst as u64
+        });
+        __bindgen_bitfield_unit.set(11usize, 1u8, {
+            let psh: u16 = unsafe { ::std::mem::transmute(psh) };
+            psh as u64
+        });
+        __bindgen_bitfield_unit.set(12usize, 1u8, {
+            let ack: u16 = unsafe { ::std::mem::transmute(ack) };
+            ack as u64
+        });
+        __bindgen_bitfield_unit.set(13usize, 1u8, {
+            let urg: u16 = unsafe { ::std::mem::transmute(urg) };
+            urg as u64
+        });
+        __bindgen_bitfield_unit.set(14usize, 1u8, {
+            let ece: u16 = unsafe { ::std::mem::transmute(ece) };
+            ece as u64
+        });
+        __bindgen_bitfield_unit.set(15usize, 1u8, {
+            let cwr: u16 = unsafe { ::std::mem::transmute(cwr) };
+            cwr as u64
+        });
+        __bindgen_bitfield_unit
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union tcp_word_hdr {
+    pub hdr: tcphdr,
+    pub words: [__be32; 5usize],
+}
+#[test]
+fn bindgen_test_layout_tcp_word_hdr() {
+    assert_eq!(
+        ::std::mem::size_of::<tcp_word_hdr>(),
+        20usize,
+        concat!("Size of: ", stringify!(tcp_word_hdr))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<tcp_word_hdr>(),
+        4usize,
+        concat!("Alignment of ", stringify!(tcp_word_hdr))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_word_hdr>())).hdr as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_word_hdr),
+            "::",
+            stringify!(hdr)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_word_hdr>())).words as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_word_hdr),
+            "::",
+            stringify!(words)
+        )
+    );
+}
+impl Default for tcp_word_hdr {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+pub const TCP_FLAG_CWR: ::std::os::raw::c_uint = 32768;
+pub const TCP_FLAG_ECE: ::std::os::raw::c_uint = 16384;
+pub const TCP_FLAG_URG: ::std::os::raw::c_uint = 8192;
+pub const TCP_FLAG_ACK: ::std::os::raw::c_uint = 4096;
+pub const TCP_FLAG_PSH: ::std::os::raw::c_uint = 2048;
+pub const TCP_FLAG_RST: ::std::os::raw::c_uint = 1024;
+pub const TCP_FLAG_SYN: ::std::os::raw::c_uint = 512;
+pub const TCP_FLAG_FIN: ::std::os::raw::c_uint = 256;
+pub const TCP_RESERVED_BITS: ::std::os::raw::c_uint = 15;
+pub const TCP_DATA_OFFSET: ::std::os::raw::c_uint = 240;
+pub type _bindgen_ty_7 = ::std::os::raw::c_uint;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct tcp_repair_opt {
+    pub opt_code: __u32,
+    pub opt_val: __u32,
+}
+#[test]
+fn bindgen_test_layout_tcp_repair_opt() {
+    assert_eq!(
+        ::std::mem::size_of::<tcp_repair_opt>(),
+        8usize,
+        concat!("Size of: ", stringify!(tcp_repair_opt))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<tcp_repair_opt>(),
+        4usize,
+        concat!("Alignment of ", stringify!(tcp_repair_opt))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_repair_opt>())).opt_code as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_repair_opt),
+            "::",
+            stringify!(opt_code)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_repair_opt>())).opt_val as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_repair_opt),
+            "::",
+            stringify!(opt_val)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct tcp_repair_window {
+    pub snd_wl1: __u32,
+    pub snd_wnd: __u32,
+    pub max_window: __u32,
+    pub rcv_wnd: __u32,
+    pub rcv_wup: __u32,
+}
+#[test]
+fn bindgen_test_layout_tcp_repair_window() {
+    assert_eq!(
+        ::std::mem::size_of::<tcp_repair_window>(),
+        20usize,
+        concat!("Size of: ", stringify!(tcp_repair_window))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<tcp_repair_window>(),
+        4usize,
+        concat!("Alignment of ", stringify!(tcp_repair_window))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_repair_window>())).snd_wl1 as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_repair_window),
+            "::",
+            stringify!(snd_wl1)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_repair_window>())).snd_wnd as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_repair_window),
+            "::",
+            stringify!(snd_wnd)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_repair_window>())).max_window as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_repair_window),
+            "::",
+            stringify!(max_window)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_repair_window>())).rcv_wnd as *const _ as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_repair_window),
+            "::",
+            stringify!(rcv_wnd)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_repair_window>())).rcv_wup as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_repair_window),
+            "::",
+            stringify!(rcv_wup)
+        )
+    );
+}
+pub const TCP_NO_QUEUE: ::std::os::raw::c_uint = 0;
+pub const TCP_RECV_QUEUE: ::std::os::raw::c_uint = 1;
+pub const TCP_SEND_QUEUE: ::std::os::raw::c_uint = 2;
+pub const TCP_QUEUES_NR: ::std::os::raw::c_uint = 3;
+pub type _bindgen_ty_8 = ::std::os::raw::c_uint;
+pub const tcp_ca_state_TCP_CA_Open: tcp_ca_state = 0;
+pub const tcp_ca_state_TCP_CA_Disorder: tcp_ca_state = 1;
+pub const tcp_ca_state_TCP_CA_CWR: tcp_ca_state = 2;
+pub const tcp_ca_state_TCP_CA_Recovery: tcp_ca_state = 3;
+pub const tcp_ca_state_TCP_CA_Loss: tcp_ca_state = 4;
+pub type tcp_ca_state = ::std::os::raw::c_uint;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct tcp_info {
+    pub tcpi_state: __u8,
+    pub tcpi_ca_state: __u8,
+    pub tcpi_retransmits: __u8,
+    pub tcpi_probes: __u8,
+    pub tcpi_backoff: __u8,
+    pub tcpi_options: __u8,
+    pub _bitfield_align_1: [u8; 0],
+    pub _bitfield_1: __BindgenBitfieldUnit<[u8; 2usize]>,
+    pub tcpi_rto: __u32,
+    pub tcpi_ato: __u32,
+    pub tcpi_snd_mss: __u32,
+    pub tcpi_rcv_mss: __u32,
+    pub tcpi_unacked: __u32,
+    pub tcpi_sacked: __u32,
+    pub tcpi_lost: __u32,
+    pub tcpi_retrans: __u32,
+    pub tcpi_fackets: __u32,
+    pub tcpi_last_data_sent: __u32,
+    pub tcpi_last_ack_sent: __u32,
+    pub tcpi_last_data_recv: __u32,
+    pub tcpi_last_ack_recv: __u32,
+    pub tcpi_pmtu: __u32,
+    pub tcpi_rcv_ssthresh: __u32,
+    pub tcpi_rtt: __u32,
+    pub tcpi_rttvar: __u32,
+    pub tcpi_snd_ssthresh: __u32,
+    pub tcpi_snd_cwnd: __u32,
+    pub tcpi_advmss: __u32,
+    pub tcpi_reordering: __u32,
+    pub tcpi_rcv_rtt: __u32,
+    pub tcpi_rcv_space: __u32,
+    pub tcpi_total_retrans: __u32,
+    pub tcpi_pacing_rate: __u64,
+    pub tcpi_max_pacing_rate: __u64,
+    pub tcpi_bytes_acked: __u64,
+    pub tcpi_bytes_received: __u64,
+    pub tcpi_segs_out: __u32,
+    pub tcpi_segs_in: __u32,
+    pub tcpi_notsent_bytes: __u32,
+    pub tcpi_min_rtt: __u32,
+    pub tcpi_data_segs_in: __u32,
+    pub tcpi_data_segs_out: __u32,
+    pub tcpi_delivery_rate: __u64,
+    pub tcpi_busy_time: __u64,
+    pub tcpi_rwnd_limited: __u64,
+    pub tcpi_sndbuf_limited: __u64,
+    pub tcpi_delivered: __u32,
+    pub tcpi_delivered_ce: __u32,
+    pub tcpi_bytes_sent: __u64,
+    pub tcpi_bytes_retrans: __u64,
+    pub tcpi_dsack_dups: __u32,
+    pub tcpi_reord_seen: __u32,
+    pub tcpi_rcv_ooopack: __u32,
+    pub tcpi_snd_wnd: __u32,
+}
+#[test]
+fn bindgen_test_layout_tcp_info() {
+    assert_eq!(
+        ::std::mem::size_of::<tcp_info>(),
+        232usize,
+        concat!("Size of: ", stringify!(tcp_info))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<tcp_info>(),
+        8usize,
+        concat!("Alignment of ", stringify!(tcp_info))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_state as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_state)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_ca_state as *const _ as usize },
+        1usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_ca_state)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_retransmits as *const _ as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_retransmits)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_probes as *const _ as usize },
+        3usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_probes)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_backoff as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_backoff)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_options as *const _ as usize },
+        5usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_options)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_rto as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_rto)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_ato as *const _ as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_ato)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_snd_mss as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_snd_mss)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_rcv_mss as *const _ as usize },
+        20usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_rcv_mss)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_unacked as *const _ as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_unacked)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_sacked as *const _ as usize },
+        28usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_sacked)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_lost as *const _ as usize },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_lost)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_retrans as *const _ as usize },
+        36usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_retrans)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_fackets as *const _ as usize },
+        40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_fackets)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_last_data_sent as *const _ as usize },
+        44usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_last_data_sent)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_last_ack_sent as *const _ as usize },
+        48usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_last_ack_sent)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_last_data_recv as *const _ as usize },
+        52usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_last_data_recv)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_last_ack_recv as *const _ as usize },
+        56usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_last_ack_recv)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_pmtu as *const _ as usize },
+        60usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_pmtu)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_rcv_ssthresh as *const _ as usize },
+        64usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_rcv_ssthresh)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_rtt as *const _ as usize },
+        68usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_rtt)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_rttvar as *const _ as usize },
+        72usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_rttvar)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_snd_ssthresh as *const _ as usize },
+        76usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_snd_ssthresh)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_snd_cwnd as *const _ as usize },
+        80usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_snd_cwnd)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_advmss as *const _ as usize },
+        84usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_advmss)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_reordering as *const _ as usize },
+        88usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_reordering)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_rcv_rtt as *const _ as usize },
+        92usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_rcv_rtt)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_rcv_space as *const _ as usize },
+        96usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_rcv_space)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_total_retrans as *const _ as usize },
+        100usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_total_retrans)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_pacing_rate as *const _ as usize },
+        104usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_pacing_rate)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_max_pacing_rate as *const _ as usize },
+        112usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_max_pacing_rate)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_bytes_acked as *const _ as usize },
+        120usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_bytes_acked)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_bytes_received as *const _ as usize },
+        128usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_bytes_received)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_segs_out as *const _ as usize },
+        136usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_segs_out)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_segs_in as *const _ as usize },
+        140usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_segs_in)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_notsent_bytes as *const _ as usize },
+        144usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_notsent_bytes)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_min_rtt as *const _ as usize },
+        148usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_min_rtt)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_data_segs_in as *const _ as usize },
+        152usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_data_segs_in)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_data_segs_out as *const _ as usize },
+        156usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_data_segs_out)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_delivery_rate as *const _ as usize },
+        160usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_delivery_rate)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_busy_time as *const _ as usize },
+        168usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_busy_time)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_rwnd_limited as *const _ as usize },
+        176usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_rwnd_limited)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_sndbuf_limited as *const _ as usize },
+        184usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_sndbuf_limited)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_delivered as *const _ as usize },
+        192usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_delivered)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_delivered_ce as *const _ as usize },
+        196usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_delivered_ce)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_bytes_sent as *const _ as usize },
+        200usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_bytes_sent)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_bytes_retrans as *const _ as usize },
+        208usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_bytes_retrans)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_dsack_dups as *const _ as usize },
+        216usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_dsack_dups)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_reord_seen as *const _ as usize },
+        220usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_reord_seen)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_rcv_ooopack as *const _ as usize },
+        224usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_rcv_ooopack)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_info>())).tcpi_snd_wnd as *const _ as usize },
+        228usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_info),
+            "::",
+            stringify!(tcpi_snd_wnd)
+        )
+    );
+}
+impl tcp_info {
+    #[inline]
+    pub fn tcpi_snd_wscale(&self) -> __u8 {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 4u8) as u8) }
+    }
+    #[inline]
+    pub fn set_tcpi_snd_wscale(&mut self, val: __u8) {
+        unsafe {
+            let val: u8 = ::std::mem::transmute(val);
+            self._bitfield_1.set(0usize, 4u8, val as u64)
+        }
+    }
+    #[inline]
+    pub fn tcpi_rcv_wscale(&self) -> __u8 {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(4usize, 4u8) as u8) }
+    }
+    #[inline]
+    pub fn set_tcpi_rcv_wscale(&mut self, val: __u8) {
+        unsafe {
+            let val: u8 = ::std::mem::transmute(val);
+            self._bitfield_1.set(4usize, 4u8, val as u64)
+        }
+    }
+    #[inline]
+    pub fn tcpi_delivery_rate_app_limited(&self) -> __u8 {
+        unsafe { ::std::mem::transmute(self._bitfield_1.get(8usize, 1u8) as u8) }
+    }
+    #[inline]
+    pub fn set_tcpi_delivery_rate_app_limited(&mut self, val: __u8) {
+        unsafe {
+            let val: u8 = ::std::mem::transmute(val);
+            self._bitfield_1.set(8usize, 1u8, val as u64)
+        }
+    }
+    #[inline]
+    pub fn new_bitfield_1(
+        tcpi_snd_wscale: __u8,
+        tcpi_rcv_wscale: __u8,
+        tcpi_delivery_rate_app_limited: __u8,
+    ) -> __BindgenBitfieldUnit<[u8; 2usize]> {
+        let mut __bindgen_bitfield_unit: __BindgenBitfieldUnit<[u8; 2usize]> = Default::default();
+        __bindgen_bitfield_unit.set(0usize, 4u8, {
+            let tcpi_snd_wscale: u8 = unsafe { ::std::mem::transmute(tcpi_snd_wscale) };
+            tcpi_snd_wscale as u64
+        });
+        __bindgen_bitfield_unit.set(4usize, 4u8, {
+            let tcpi_rcv_wscale: u8 = unsafe { ::std::mem::transmute(tcpi_rcv_wscale) };
+            tcpi_rcv_wscale as u64
+        });
+        __bindgen_bitfield_unit.set(8usize, 1u8, {
+            let tcpi_delivery_rate_app_limited: u8 =
+                unsafe { ::std::mem::transmute(tcpi_delivery_rate_app_limited) };
+            tcpi_delivery_rate_app_limited as u64
+        });
+        __bindgen_bitfield_unit
+    }
+}
+pub const TCP_NLA_PAD: ::std::os::raw::c_uint = 0;
+pub const TCP_NLA_BUSY: ::std::os::raw::c_uint = 1;
+pub const TCP_NLA_RWND_LIMITED: ::std::os::raw::c_uint = 2;
+pub const TCP_NLA_SNDBUF_LIMITED: ::std::os::raw::c_uint = 3;
+pub const TCP_NLA_DATA_SEGS_OUT: ::std::os::raw::c_uint = 4;
+pub const TCP_NLA_TOTAL_RETRANS: ::std::os::raw::c_uint = 5;
+pub const TCP_NLA_PACING_RATE: ::std::os::raw::c_uint = 6;
+pub const TCP_NLA_DELIVERY_RATE: ::std::os::raw::c_uint = 7;
+pub const TCP_NLA_SND_CWND: ::std::os::raw::c_uint = 8;
+pub const TCP_NLA_REORDERING: ::std::os::raw::c_uint = 9;
+pub const TCP_NLA_MIN_RTT: ::std::os::raw::c_uint = 10;
+pub const TCP_NLA_RECUR_RETRANS: ::std::os::raw::c_uint = 11;
+pub const TCP_NLA_DELIVERY_RATE_APP_LMT: ::std::os::raw::c_uint = 12;
+pub const TCP_NLA_SNDQ_SIZE: ::std::os::raw::c_uint = 13;
+pub const TCP_NLA_CA_STATE: ::std::os::raw::c_uint = 14;
+pub const TCP_NLA_SND_SSTHRESH: ::std::os::raw::c_uint = 15;
+pub const TCP_NLA_DELIVERED: ::std::os::raw::c_uint = 16;
+pub const TCP_NLA_DELIVERED_CE: ::std::os::raw::c_uint = 17;
+pub const TCP_NLA_BYTES_SENT: ::std::os::raw::c_uint = 18;
+pub const TCP_NLA_BYTES_RETRANS: ::std::os::raw::c_uint = 19;
+pub const TCP_NLA_DSACK_DUPS: ::std::os::raw::c_uint = 20;
+pub const TCP_NLA_REORD_SEEN: ::std::os::raw::c_uint = 21;
+pub const TCP_NLA_SRTT: ::std::os::raw::c_uint = 22;
+pub type _bindgen_ty_9 = ::std::os::raw::c_uint;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct tcp_md5sig {
+    pub tcpm_addr: __kernel_sockaddr_storage,
+    pub tcpm_flags: __u8,
+    pub tcpm_prefixlen: __u8,
+    pub tcpm_keylen: __u16,
+    pub __tcpm_pad: __u32,
+    pub tcpm_key: [__u8; 80usize],
+}
+#[test]
+fn bindgen_test_layout_tcp_md5sig() {
+    assert_eq!(
+        ::std::mem::size_of::<tcp_md5sig>(),
+        216usize,
+        concat!("Size of: ", stringify!(tcp_md5sig))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<tcp_md5sig>(),
+        8usize,
+        concat!("Alignment of ", stringify!(tcp_md5sig))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_md5sig>())).tcpm_addr as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_md5sig),
+            "::",
+            stringify!(tcpm_addr)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_md5sig>())).tcpm_flags as *const _ as usize },
+        128usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_md5sig),
+            "::",
+            stringify!(tcpm_flags)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_md5sig>())).tcpm_prefixlen as *const _ as usize },
+        129usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_md5sig),
+            "::",
+            stringify!(tcpm_prefixlen)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_md5sig>())).tcpm_keylen as *const _ as usize },
+        130usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_md5sig),
+            "::",
+            stringify!(tcpm_keylen)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_md5sig>())).__tcpm_pad as *const _ as usize },
+        132usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_md5sig),
+            "::",
+            stringify!(__tcpm_pad)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_md5sig>())).tcpm_key as *const _ as usize },
+        136usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_md5sig),
+            "::",
+            stringify!(tcpm_key)
+        )
+    );
+}
+impl Default for tcp_md5sig {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct tcp_diag_md5sig {
+    pub tcpm_family: __u8,
+    pub tcpm_prefixlen: __u8,
+    pub tcpm_keylen: __u16,
+    pub tcpm_addr: [__be32; 4usize],
+    pub tcpm_key: [__u8; 80usize],
+}
+#[test]
+fn bindgen_test_layout_tcp_diag_md5sig() {
+    assert_eq!(
+        ::std::mem::size_of::<tcp_diag_md5sig>(),
+        100usize,
+        concat!("Size of: ", stringify!(tcp_diag_md5sig))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<tcp_diag_md5sig>(),
+        4usize,
+        concat!("Alignment of ", stringify!(tcp_diag_md5sig))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_diag_md5sig>())).tcpm_family as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_diag_md5sig),
+            "::",
+            stringify!(tcpm_family)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_diag_md5sig>())).tcpm_prefixlen as *const _ as usize },
+        1usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_diag_md5sig),
+            "::",
+            stringify!(tcpm_prefixlen)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_diag_md5sig>())).tcpm_keylen as *const _ as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_diag_md5sig),
+            "::",
+            stringify!(tcpm_keylen)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_diag_md5sig>())).tcpm_addr as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_diag_md5sig),
+            "::",
+            stringify!(tcpm_addr)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_diag_md5sig>())).tcpm_key as *const _ as usize },
+        20usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_diag_md5sig),
+            "::",
+            stringify!(tcpm_key)
+        )
+    );
+}
+impl Default for tcp_diag_md5sig {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct tcp_zerocopy_receive {
+    pub address: __u64,
+    pub length: __u32,
+    pub recv_skip_hint: __u32,
+}
+#[test]
+fn bindgen_test_layout_tcp_zerocopy_receive() {
+    assert_eq!(
+        ::std::mem::size_of::<tcp_zerocopy_receive>(),
+        16usize,
+        concat!("Size of: ", stringify!(tcp_zerocopy_receive))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<tcp_zerocopy_receive>(),
+        8usize,
+        concat!("Alignment of ", stringify!(tcp_zerocopy_receive))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_zerocopy_receive>())).address as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_zerocopy_receive),
+            "::",
+            stringify!(address)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tcp_zerocopy_receive>())).length as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_zerocopy_receive),
+            "::",
+            stringify!(length)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<tcp_zerocopy_receive>())).recv_skip_hint as *const _ as usize
+        },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tcp_zerocopy_receive),
+            "::",
+            stringify!(recv_skip_hint)
+        )
+    );
+}
+pub const IPPROTO_IP: ::std::os::raw::c_uint = 0;
+pub const IPPROTO_ICMP: ::std::os::raw::c_uint = 1;
+pub const IPPROTO_IGMP: ::std::os::raw::c_uint = 2;
+pub const IPPROTO_IPIP: ::std::os::raw::c_uint = 4;
+pub const IPPROTO_TCP: ::std::os::raw::c_uint = 6;
+pub const IPPROTO_EGP: ::std::os::raw::c_uint = 8;
+pub const IPPROTO_PUP: ::std::os::raw::c_uint = 12;
+pub const IPPROTO_UDP: ::std::os::raw::c_uint = 17;
+pub const IPPROTO_IDP: ::std::os::raw::c_uint = 22;
+pub const IPPROTO_TP: ::std::os::raw::c_uint = 29;
+pub const IPPROTO_DCCP: ::std::os::raw::c_uint = 33;
+pub const IPPROTO_IPV6: ::std::os::raw::c_uint = 41;
+pub const IPPROTO_RSVP: ::std::os::raw::c_uint = 46;
+pub const IPPROTO_GRE: ::std::os::raw::c_uint = 47;
+pub const IPPROTO_ESP: ::std::os::raw::c_uint = 50;
+pub const IPPROTO_AH: ::std::os::raw::c_uint = 51;
+pub const IPPROTO_MTP: ::std::os::raw::c_uint = 92;
+pub const IPPROTO_BEETPH: ::std::os::raw::c_uint = 94;
+pub const IPPROTO_ENCAP: ::std::os::raw::c_uint = 98;
+pub const IPPROTO_PIM: ::std::os::raw::c_uint = 103;
+pub const IPPROTO_COMP: ::std::os::raw::c_uint = 108;
+pub const IPPROTO_SCTP: ::std::os::raw::c_uint = 132;
+pub const IPPROTO_UDPLITE: ::std::os::raw::c_uint = 136;
+pub const IPPROTO_MPLS: ::std::os::raw::c_uint = 137;
+pub const IPPROTO_RAW: ::std::os::raw::c_uint = 255;
+pub const IPPROTO_MAX: ::std::os::raw::c_uint = 256;
+pub type _bindgen_ty_10 = ::std::os::raw::c_uint;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct in_addr {
+    pub s_addr: __be32,
+}
+#[test]
+fn bindgen_test_layout_in_addr() {
+    assert_eq!(
+        ::std::mem::size_of::<in_addr>(),
+        4usize,
+        concat!("Size of: ", stringify!(in_addr))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<in_addr>(),
+        4usize,
+        concat!("Alignment of ", stringify!(in_addr))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<in_addr>())).s_addr as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(in_addr),
+            "::",
+            stringify!(s_addr)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct ip_mreq {
+    pub imr_multiaddr: in_addr,
+    pub imr_interface: in_addr,
+}
+#[test]
+fn bindgen_test_layout_ip_mreq() {
+    assert_eq!(
+        ::std::mem::size_of::<ip_mreq>(),
+        8usize,
+        concat!("Size of: ", stringify!(ip_mreq))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ip_mreq>(),
+        4usize,
+        concat!("Alignment of ", stringify!(ip_mreq))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip_mreq>())).imr_multiaddr as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_mreq),
+            "::",
+            stringify!(imr_multiaddr)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip_mreq>())).imr_interface as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_mreq),
+            "::",
+            stringify!(imr_interface)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct ip_mreqn {
+    pub imr_multiaddr: in_addr,
+    pub imr_address: in_addr,
+    pub imr_ifindex: ::std::os::raw::c_int,
+}
+#[test]
+fn bindgen_test_layout_ip_mreqn() {
+    assert_eq!(
+        ::std::mem::size_of::<ip_mreqn>(),
+        12usize,
+        concat!("Size of: ", stringify!(ip_mreqn))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ip_mreqn>(),
+        4usize,
+        concat!("Alignment of ", stringify!(ip_mreqn))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip_mreqn>())).imr_multiaddr as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_mreqn),
+            "::",
+            stringify!(imr_multiaddr)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip_mreqn>())).imr_address as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_mreqn),
+            "::",
+            stringify!(imr_address)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip_mreqn>())).imr_ifindex as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_mreqn),
+            "::",
+            stringify!(imr_ifindex)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct ip_mreq_source {
+    pub imr_multiaddr: __be32,
+    pub imr_interface: __be32,
+    pub imr_sourceaddr: __be32,
+}
+#[test]
+fn bindgen_test_layout_ip_mreq_source() {
+    assert_eq!(
+        ::std::mem::size_of::<ip_mreq_source>(),
+        12usize,
+        concat!("Size of: ", stringify!(ip_mreq_source))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ip_mreq_source>(),
+        4usize,
+        concat!("Alignment of ", stringify!(ip_mreq_source))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip_mreq_source>())).imr_multiaddr as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_mreq_source),
+            "::",
+            stringify!(imr_multiaddr)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip_mreq_source>())).imr_interface as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_mreq_source),
+            "::",
+            stringify!(imr_interface)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip_mreq_source>())).imr_sourceaddr as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_mreq_source),
+            "::",
+            stringify!(imr_sourceaddr)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct ip_msfilter {
+    pub imsf_multiaddr: __be32,
+    pub imsf_interface: __be32,
+    pub imsf_fmode: __u32,
+    pub imsf_numsrc: __u32,
+    pub imsf_slist: [__be32; 1usize],
+}
+#[test]
+fn bindgen_test_layout_ip_msfilter() {
+    assert_eq!(
+        ::std::mem::size_of::<ip_msfilter>(),
+        20usize,
+        concat!("Size of: ", stringify!(ip_msfilter))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ip_msfilter>(),
+        4usize,
+        concat!("Alignment of ", stringify!(ip_msfilter))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip_msfilter>())).imsf_multiaddr as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_msfilter),
+            "::",
+            stringify!(imsf_multiaddr)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip_msfilter>())).imsf_interface as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_msfilter),
+            "::",
+            stringify!(imsf_interface)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip_msfilter>())).imsf_fmode as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_msfilter),
+            "::",
+            stringify!(imsf_fmode)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip_msfilter>())).imsf_numsrc as *const _ as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_msfilter),
+            "::",
+            stringify!(imsf_numsrc)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ip_msfilter>())).imsf_slist as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ip_msfilter),
+            "::",
+            stringify!(imsf_slist)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct group_req {
+    pub gr_interface: __u32,
+    pub gr_group: __kernel_sockaddr_storage,
+}
+#[test]
+fn bindgen_test_layout_group_req() {
+    assert_eq!(
+        ::std::mem::size_of::<group_req>(),
+        136usize,
+        concat!("Size of: ", stringify!(group_req))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<group_req>(),
+        8usize,
+        concat!("Alignment of ", stringify!(group_req))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<group_req>())).gr_interface as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(group_req),
+            "::",
+            stringify!(gr_interface)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<group_req>())).gr_group as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(group_req),
+            "::",
+            stringify!(gr_group)
+        )
+    );
+}
+impl Default for group_req {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct group_source_req {
+    pub gsr_interface: __u32,
+    pub gsr_group: __kernel_sockaddr_storage,
+    pub gsr_source: __kernel_sockaddr_storage,
+}
+#[test]
+fn bindgen_test_layout_group_source_req() {
+    assert_eq!(
+        ::std::mem::size_of::<group_source_req>(),
+        264usize,
+        concat!("Size of: ", stringify!(group_source_req))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<group_source_req>(),
+        8usize,
+        concat!("Alignment of ", stringify!(group_source_req))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<group_source_req>())).gsr_interface as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(group_source_req),
+            "::",
+            stringify!(gsr_interface)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<group_source_req>())).gsr_group as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(group_source_req),
+            "::",
+            stringify!(gsr_group)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<group_source_req>())).gsr_source as *const _ as usize },
+        136usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(group_source_req),
+            "::",
+            stringify!(gsr_source)
+        )
+    );
+}
+impl Default for group_source_req {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct group_filter {
+    pub gf_interface: __u32,
+    pub gf_group: __kernel_sockaddr_storage,
+    pub gf_fmode: __u32,
+    pub gf_numsrc: __u32,
+    pub gf_slist: [__kernel_sockaddr_storage; 1usize],
+}
+#[test]
+fn bindgen_test_layout_group_filter() {
+    assert_eq!(
+        ::std::mem::size_of::<group_filter>(),
+        272usize,
+        concat!("Size of: ", stringify!(group_filter))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<group_filter>(),
+        8usize,
+        concat!("Alignment of ", stringify!(group_filter))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<group_filter>())).gf_interface as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(group_filter),
+            "::",
+            stringify!(gf_interface)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<group_filter>())).gf_group as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(group_filter),
+            "::",
+            stringify!(gf_group)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<group_filter>())).gf_fmode as *const _ as usize },
+        136usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(group_filter),
+            "::",
+            stringify!(gf_fmode)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<group_filter>())).gf_numsrc as *const _ as usize },
+        140usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(group_filter),
+            "::",
+            stringify!(gf_numsrc)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<group_filter>())).gf_slist as *const _ as usize },
+        144usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(group_filter),
+            "::",
+            stringify!(gf_slist)
+        )
+    );
+}
+impl Default for group_filter {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct in_pktinfo {
+    pub ipi_ifindex: ::std::os::raw::c_int,
+    pub ipi_spec_dst: in_addr,
+    pub ipi_addr: in_addr,
+}
+#[test]
+fn bindgen_test_layout_in_pktinfo() {
+    assert_eq!(
+        ::std::mem::size_of::<in_pktinfo>(),
+        12usize,
+        concat!("Size of: ", stringify!(in_pktinfo))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<in_pktinfo>(),
+        4usize,
+        concat!("Alignment of ", stringify!(in_pktinfo))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<in_pktinfo>())).ipi_ifindex as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(in_pktinfo),
+            "::",
+            stringify!(ipi_ifindex)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<in_pktinfo>())).ipi_spec_dst as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(in_pktinfo),
+            "::",
+            stringify!(ipi_spec_dst)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<in_pktinfo>())).ipi_addr as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(in_pktinfo),
+            "::",
+            stringify!(ipi_addr)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct sockaddr_in {
+    pub sin_family: __kernel_sa_family_t,
+    pub sin_port: __be16,
+    pub sin_addr: in_addr,
+    pub __pad: [::std::os::raw::c_uchar; 8usize],
+}
+#[test]
+fn bindgen_test_layout_sockaddr_in() {
+    assert_eq!(
+        ::std::mem::size_of::<sockaddr_in>(),
+        16usize,
+        concat!("Size of: ", stringify!(sockaddr_in))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<sockaddr_in>(),
+        4usize,
+        concat!("Alignment of ", stringify!(sockaddr_in))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<sockaddr_in>())).sin_family as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sockaddr_in),
+            "::",
+            stringify!(sin_family)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<sockaddr_in>())).sin_port as *const _ as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sockaddr_in),
+            "::",
+            stringify!(sin_port)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<sockaddr_in>())).sin_addr as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sockaddr_in),
+            "::",
+            stringify!(sin_addr)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<sockaddr_in>())).__pad as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(sockaddr_in),
+            "::",
+            stringify!(__pad)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone, PartialEq)]
+pub struct hdr_cursor {
+    pub pos: *mut ::std::os::raw::c_void,
+}
+#[test]
+fn bindgen_test_layout_hdr_cursor() {
+    assert_eq!(
+        ::std::mem::size_of::<hdr_cursor>(),
+        8usize,
+        concat!("Size of: ", stringify!(hdr_cursor))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<hdr_cursor>(),
+        8usize,
+        concat!("Alignment of ", stringify!(hdr_cursor))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<hdr_cursor>())).pos as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(hdr_cursor),
+            "::",
+            stringify!(pos)
+        )
+    );
+}
+impl Default for hdr_cursor {
+    fn default() -> Self {
+        unsafe { ::std::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct vlan_hdr {
+    pub h_vlan_TCI: __be16,
+    pub h_vlan_encapsulated_proto: __be16,
+}
+#[test]
+fn bindgen_test_layout_vlan_hdr() {
+    assert_eq!(
+        ::std::mem::size_of::<vlan_hdr>(),
+        4usize,
+        concat!("Size of: ", stringify!(vlan_hdr))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<vlan_hdr>(),
+        2usize,
+        concat!("Alignment of ", stringify!(vlan_hdr))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<vlan_hdr>())).h_vlan_TCI as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(vlan_hdr),
+            "::",
+            stringify!(h_vlan_TCI)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<vlan_hdr>())).h_vlan_encapsulated_proto as *const _ as usize
+        },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(vlan_hdr),
+            "::",
+            stringify!(h_vlan_encapsulated_proto)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
+pub struct icmphdr_common {
+    pub type_: __u8,
+    pub code: __u8,
+    pub cksum: __sum16,
+}
+#[test]
+fn bindgen_test_layout_icmphdr_common() {
+    assert_eq!(
+        ::std::mem::size_of::<icmphdr_common>(),
+        4usize,
+        concat!("Size of: ", stringify!(icmphdr_common))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<icmphdr_common>(),
+        2usize,
+        concat!("Alignment of ", stringify!(icmphdr_common))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<icmphdr_common>())).type_ as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmphdr_common),
+            "::",
+            stringify!(type_)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<icmphdr_common>())).code as *const _ as usize },
+        1usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmphdr_common),
+            "::",
+            stringify!(code)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<icmphdr_common>())).cksum as *const _ as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(icmphdr_common),
+            "::",
+            stringify!(cksum)
         )
     );
 }
