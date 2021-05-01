@@ -1,5 +1,5 @@
 [package]
-name = "libxdp"
+name = "libxdp-sys"
 description= "Rust FFI bindings to libxdp generated using bindgen."
 repository = "https://github.com/chenhengqi/libxdp-rs"
 homepage = "https://github.com/chenhengqi/libxdp-rs"
