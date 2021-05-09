@@ -8,15 +8,6 @@ fn main() {
     let out_dir_str = out_dir.to_str().unwrap();
 
     if cfg!(target_os = "linux") {
-        // run `git submodule update --init --recursive`
-        let status = Command::new("git")
-            .args(&["submodule", "update", "--init", "--recursive"])
-            .current_dir(src_dir.clone())
-            .status()
-            .unwrap();
-
-        assert!(status.success());
-
         // run `configure`
         let status = Command::new("./configure")
             .current_dir(src_dir.join("xdp-tools"))
